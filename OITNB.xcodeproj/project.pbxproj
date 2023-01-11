@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43E32C39296ED96D00F1A653 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E32C38296ED96D00F1A653 /* Carousel.swift */; };
 		697894AF296ECA6E00EA2455 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697894AE296ECA6E00EA2455 /* MainScreenView.swift */; };
 		697894B1296ED31D00EA2455 /* BasicDrinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697894B0296ED31D00EA2455 /* BasicDrinksView.swift */; };
 		ACBB41FB296EC9ED001C6CC1 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB41FA296EC9ED001C6CC1 /* Model.swift */; };
-		ACBB41FD296ED7B3001C6CC1 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB41FC296ED7B3001C6CC1 /* Carousel.swift */; };
 		EFEE8421296EBE8F00141046 /* OITNBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE8420296EBE8F00141046 /* OITNBApp.swift */; };
 		EFEE8423296EBE8F00141046 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE8422296EBE8F00141046 /* ContentView.swift */; };
 		EFEE8425296EBE9000141046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFEE8424296EBE9000141046 /* Assets.xcassets */; };
@@ -18,10 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43E32C38296ED96D00F1A653 /* Carousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Carousel.swift; path = ../../../../../../Downloads/Carousel.swift; sourceTree = "<group>"; };
 		697894AE296ECA6E00EA2455 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
 		697894B0296ED31D00EA2455 /* BasicDrinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDrinksView.swift; sourceTree = "<group>"; };
 		ACBB41FA296EC9ED001C6CC1 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		ACBB41FC296ED7B3001C6CC1 /* Carousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Carousel.swift; path = ../../../Downloads/Carousel.swift; sourceTree = "<group>"; };
 		EFEE841D296EBE8F00141046 /* OITNB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OITNB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEE8420296EBE8F00141046 /* OITNBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OITNBApp.swift; sourceTree = "<group>"; };
 		EFEE8422296EBE8F00141046 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -60,8 +60,8 @@
 			isa = PBXGroup;
 			children = (
 				EFEE8420296EBE8F00141046 /* OITNBApp.swift */,
-				ACBB41FC296ED7B3001C6CC1 /* Carousel.swift */,
 				EFEE8422296EBE8F00141046 /* ContentView.swift */,
+				43E32C38296ED96D00F1A653 /* Carousel.swift */,
 				697894AE296ECA6E00EA2455 /* MainScreenView.swift */,
 				697894B0296ED31D00EA2455 /* BasicDrinksView.swift */,
 				ACBB41FA296EC9ED001C6CC1 /* Model.swift */,
@@ -152,7 +152,7 @@
 				697894B1296ED31D00EA2455 /* BasicDrinksView.swift in Sources */,
 				ACBB41FB296EC9ED001C6CC1 /* Model.swift in Sources */,
 				EFEE8423296EBE8F00141046 /* ContentView.swift in Sources */,
-				ACBB41FD296ED7B3001C6CC1 /* Carousel.swift in Sources */,
+				43E32C39296ED96D00F1A653 /* Carousel.swift in Sources */,
 				697894AF296ECA6E00EA2455 /* MainScreenView.swift in Sources */,
 				EFEE8421296EBE8F00141046 /* OITNBApp.swift in Sources */,
 			);
