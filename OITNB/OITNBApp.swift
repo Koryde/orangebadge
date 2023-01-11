@@ -11,7 +11,8 @@ import SwiftUI
 struct OITNBApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let appData = AppData()
+            ContentView().environmentObject(appData)
         }
     }
 }

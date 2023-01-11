@@ -16,19 +16,19 @@ struct Drink : Identifiable, Hashable {
     let id = UUID()
     var category : Category
     var name : String
-    var alcoholByVolume : Float
-    var mililiters : Float
+    var alcoholByVolume : Double
+    var milliliters : Double
     var isFavorite : Bool = false
     var iconName : String
     
 }
 
 class AppData : ObservableObject {
-    func calculateBac(drink: Drink, myWeight: Float, myGender: String, haveEat: Bool) -> Float {
+    func calculateBac(drink: Drink, myWeight: Double, myGender: String, haveEat: Bool) -> Double {
         // Calculate the grams of alcohol in a drink
-        let gramsOfAlcohol = ((drink.alcoholByVolume * 0.8) * (drink.mililiters / 100))
+        let gramsOfAlcohol = ((drink.alcoholByVolume * 0.8) * (drink.milliliters / 100))
         // Check the coefficient to calculate the BAC
-        var coefficientC : Float = 0.0
+        var coefficientC : Double = 0.0
         if myGender == "Male" {
             if haveEat {
                 coefficientC = 1.2
