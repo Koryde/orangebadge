@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43912C6B296ECBFE00EC68A6 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43912C6A296ECBFE00EC68A6 /* Carousel.swift */; };
 		EFEE8421296EBE8F00141046 /* OITNBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE8420296EBE8F00141046 /* OITNBApp.swift */; };
 		EFEE8423296EBE8F00141046 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE8422296EBE8F00141046 /* ContentView.swift */; };
 		EFEE8425296EBE9000141046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFEE8424296EBE9000141046 /* Assets.xcassets */; };
@@ -14,6 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43912C6A296ECBFE00EC68A6 /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		EFEE841D296EBE8F00141046 /* OITNB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OITNB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEE8420296EBE8F00141046 /* OITNBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OITNBApp.swift; sourceTree = "<group>"; };
 		EFEE8422296EBE8F00141046 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			children = (
 				EFEE8420296EBE8F00141046 /* OITNBApp.swift */,
 				EFEE8422296EBE8F00141046 /* ContentView.swift */,
+				43912C6A296ECBFE00EC68A6 /* Carousel.swift */,
 				EFEE8424296EBE9000141046 /* Assets.xcassets */,
 				EFEE8426296EBE9000141046 /* Preview Content */,
 			);
@@ -137,6 +140,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43912C6B296ECBFE00EC68A6 /* Carousel.swift in Sources */,
 				EFEE8423296EBE8F00141046 /* ContentView.swift in Sources */,
 				EFEE8421296EBE8F00141046 /* OITNBApp.swift in Sources */,
 			);
@@ -267,7 +271,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OITNB/Preview Content\"";
-				DEVELOPMENT_TEAM = HCXFR3FD76;
+				DEVELOPMENT_TEAM = 7TD72JJG8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -296,7 +300,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OITNB/Preview Content\"";
-				DEVELOPMENT_TEAM = HCXFR3FD76;
+				DEVELOPMENT_TEAM = 7TD72JJG8D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
