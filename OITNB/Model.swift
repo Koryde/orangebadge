@@ -47,6 +47,5 @@ class AppData : ObservableObject {
         return bloodAlcoholConcentration
     }
     
-    
 //    bac = String(appData.calculateBac(drink: Drink(category: .shot, name: "Negroni", alcoholByVolume: 24, milliliters: 90.0, iconName: ""), myWeight: 80, myGender: "Male", haveEat: true))
 }
