@@ -14,40 +14,65 @@ struct OnBoardingView: View {
     @State var selectedWeight = 45
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("Welcome to <APP NAME>")
-                Image(systemName: "wineglass.fill")
-            }
-            
-            Picker("Gender", selection: $selectedGender) {
-                ForEach(gender, id: \.self) { _gender in
-                    Text("\(_gender)")
-                }
-            }
-            .pickerStyle(.segmented)
-            
-            HStack {
-                Picker("Weight", selection: $selectedWeight){
-                    ForEach(weight, id: \.self) { _weight in
-                        Text("\(_weight)")
+        ZStack {
+            Color("MainColor")
+                .opacity(0.8)
+            VStack {
+                HStack {
+                    Text("Welcome to <APP NAME>")
+                        .font(.largeTitle)
+                        .fontWeight(.semibold)
+                        .colorInvert()
+                        
+                }.padding()
+                    Image("CocktailGlass")
+                    .resizable()
+                    .frame(width: 150,height: 150)
+                    .padding()
+                HStack{
+                    Text("Select your gender")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .colorInvert()
+                    Picker("Gender", selection: $selectedGender) {
+                        ForEach(gender, id: \.self) { _gender in
+                            Text("\(_gender)")
+                                
+                        }
                     }
                 }
-                .pickerStyle(.wheel)
-                Text("Kg")
-            }
-        }
-        .padding()
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing, content: {
-                Button(action: {
+                .padding()
+                HStack{
+                    Text("Select your weight")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .colorInvert()
                     
-                }, label: {
-                    Text("Save")
-                        .foregroundColor(Color("MainColor"))
+                    Picker("Weight", selection: $selectedWeight){
+                        ForEach(weight, id: \.self) { _weight in
+                            Text("\(_weight)")
+                        }
+                    }
+                    Text("Kg")
+                        .font(.title3)
+                        .fontWeight(.medium)
+                        .colorInvert()
+                    
+                }
+            }
+            .padding()
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("Save")
+                            .foregroundColor(Color("MainColor"))
+                    })
                 })
-            })
         }
+        }
+        .ignoresSafeArea()
     }
 }
 
