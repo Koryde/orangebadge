@@ -24,7 +24,12 @@ struct Drink : Identifiable, Hashable {
 }
 
 class AppData : ObservableObject {
-    func calculateBac(drink: Drink, myWeight: Double, myGender: String, haveEat: Bool) -> Double {
+    
+    // MARK: List of Drinks
+    @Published var allDrinks : [Drink] = []
+    
+    // MARK: Functions
+    func calculateBac(drink: Drink, myWeight: Double, myGender: String, haveEat: Bool, bacValue: String) -> Double {
         // Calculate the grams of alcohol in a drink
         let gramsOfAlcohol = ((drink.alcoholByVolume * 0.8) * (drink.milliliters / 100))
         // Check the coefficient to calculate the BAC
@@ -44,9 +49,17 @@ class AppData : ObservableObject {
         }
         print(coefficientC)
         let bloodAlcoholConcentration = gramsOfAlcohol / (myWeight * coefficientC)
-        return bloodAlcoholConcentration
+        // Check if the BAC value is 0.0, if not, add the actual BAC value with the new one.
+        if bacValue == "0.000" {
+            return bloodAlcoholConcentration
+        } else {
+            return bloodAlcoholConcentration + Double(bacValue)!
+        }
     }
     
+    func addToFavorite(drink: Drink) {
+        let index = allDrinks.firstIndex{$0.id == drink.id}
+        allDrinks[index!].isFavorite.toggle()
+    }
     
-//    bac = String(appData.calculateBac(drink: Drink(category: .shot, name: "Negroni", alcoholByVolume: 24, milliliters: 90.0, iconName: ""), myWeight: 80, myGender: "Male", haveEat: true))
 }

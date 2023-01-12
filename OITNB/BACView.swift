@@ -10,7 +10,8 @@ import SwiftUI
 struct BACView: View {
     
     var bacImage: String
-    var bacLevel: String
+    @AppStorage("bacValue") var bacValue : String = "0.000"
+//    @State var bacLevel: String
     var bacDescription: String
     
     var body: some View {
@@ -22,7 +23,7 @@ struct BACView: View {
                     .foregroundColor(.red)
                 Text(bacDescription)
             }
-            Text("BAC: \(bacLevel)")
+            Text("BAC: \(bacValue)(g/L)")
         }
     }
 }

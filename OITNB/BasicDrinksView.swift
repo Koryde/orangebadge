@@ -9,15 +9,16 @@ import SwiftUI
 
 
 struct BasicDrinksView: View {
-    
-    private var basicDrinks = [Drink(category: Category.shot, name: "Shot", alcoholByVolume: 0.0, milliliters: 0.0, iconName: "DrinkingGlass"), Drink(category: Category.wine, name: "Wine", alcoholByVolume: 0.0, milliliters: 0.0, iconName: "WineGlass"), Drink(category: Category.beer, name: "Beer", alcoholByVolume: 0.0, milliliters: 0.0, iconName: "BeerGlass"), Drink(category: Category.midCocktail, name: "Cocktail", alcoholByVolume: 0.0, milliliters: 0.0, iconName: "CocktailGlass")]
+    @EnvironmentObject var appData : AppData
+
+    private var basicDrinks = [Drink(category: Category.shot, name: "Shot", alcoholByVolume: 30.0, milliliters: 40.0, iconName: "DrinkingGlass"), Drink(category: Category.wine, name: "Wine", alcoholByVolume: 13.0, milliliters: 125.0, iconName: "WineGlass"), Drink(category: Category.beer, name: "Beer", alcoholByVolume: 5.0, milliliters: 330.0, iconName: "BeerGlass"), Drink(category: Category.midCocktail, name: "Cocktail", alcoholByVolume: 19.0, milliliters: 100.0, iconName: "CocktailGlass")]
     
     
     var body: some View {
         VStack {
             HStack(spacing: 15.0) {
                 ForEach(basicDrinks, id: \.self) { drink in
-                    BasicDrinkButton(drinkIcon: drink.iconName, drinkText: drink.name)
+                    BasicDrinkButton(drink: drink)
                 }
             }
         }
@@ -39,18 +40,21 @@ struct CircleView: View {
 
 struct BasicDrinkButton: View {
     
-    var drinkIcon: String
-    var drinkText: String
+    @EnvironmentObject var appData : AppData
+    @AppStorage("bacValue") var bacValue : String = "0.000"
+    var drink : Drink
     
     var body: some View {
-        Button(action: {}, label: {
+        Button(action: {
+            bacValue = String(String(appData.calculateBac(drink: drink, myWeight: 80, myGender: "Male", haveEat: true, bacValue: bacValue)).prefix(5))
+        }, label: {
             VStack {
                 ZStack {
                     CircleView()
                         .frame(width:80, height: 80)
-                    Image(drinkIcon)
+                    Image(drink.iconName)
                 }
-                Text(drinkText)
+                Text(drink.name)
                     .foregroundColor(.black)
             }
         })
