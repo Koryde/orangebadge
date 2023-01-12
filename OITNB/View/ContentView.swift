@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainScreenView: View {
+struct ContentView: View {
     
     @EnvironmentObject var appData : AppData
     @AppStorage("bacValue") var bacValue : String = "0.000"
@@ -48,9 +48,9 @@ struct MainScreenView: View {
     }
 }
 
-struct MainScreenView_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainScreenView()
+        ContentView()
     }
 }
 

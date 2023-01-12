@@ -20,7 +20,6 @@ struct Drink : Identifiable, Hashable {
     var milliliters : Double
     var isFavorite : Bool = false
     var iconName : String
-    
 }
 
 class AppData : ObservableObject {
@@ -47,13 +46,12 @@ class AppData : ObservableObject {
                 coefficientC = 0.5
             }
         }
-        print(coefficientC)
         let bloodAlcoholConcentration = gramsOfAlcohol / (myWeight * coefficientC)
         // Check if the BAC value is 0.0, if not, add the actual BAC value with the new one.
-        if bacValue == "0.000" {
-            return bloodAlcoholConcentration
-        } else {
+        if bacValue != "0.000" {
             return bloodAlcoholConcentration + Double(bacValue)!
+        } else {
+            return bloodAlcoholConcentration
         }
     }
     
