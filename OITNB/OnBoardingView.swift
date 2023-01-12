@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+///
 struct OnBoardingView: View {
     @State var gender = ["Male", "Female", "Prefer not to say"]
     @State var selectedGender = "Male"
