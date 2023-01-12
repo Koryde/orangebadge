@@ -7,39 +7,20 @@
 
 import SwiftUI
 
+
 struct BasicDrinksView: View {
+    
+    private var basicDrinks = [Drink(category: Category.shot, name: "Shot", alcoholByVolume: 0.0, milliliters: 0.0, iconName: "DrinkingGlass"), Drink(category: Category.wine, name: "Wine", alcoholByVolume: 0.0, milliliters: 0.0, iconName: "WineGlass"), Drink(category: Category.beer, name: "Beer", alcoholByVolume: 0.0, milliliters: 0.0, iconName: "BeerGlass"), Drink(category: Category.midCocktail, name: "Cocktail", alcoholByVolume: 0.0, milliliters: 0.0, iconName: "CocktailGlass")]
+    
+    
     var body: some View {
         VStack {
-            
-            //BASIC DRINKS
             HStack(spacing: 15.0) {
-                
-                ZStack {
-                    CircleView()
-                        .frame(width:80, height: 80)
-                    Image("DrinkingGlass")
+                ForEach(basicDrinks, id: \.self) { drink in
+                    BasicDrinkButton(drinkIcon: drink.iconName, drinkText: drink.name)
                 }
-                ZStack {
-                    CircleView()
-                        .frame(width:80, height: 80)
-                    Image( "WineGlass")
-                }
-                ZStack {
-                    CircleView()
-                        .frame(width:80, height: 80)
-                    Image("BeerGlass")
-                }
-                ZStack {
-                    CircleView()
-                        .frame(width:80, height: 80)
-                    Image("CocktailGlass")
-                }
-                
-                
             }
-            
         }
-        
     }
     
     struct BasicDrinksView_Previews: PreviewProvider {
@@ -48,10 +29,30 @@ struct BasicDrinksView: View {
         }
     }
 }
-    struct CircleView: View {
-        var body: some View {
-            Circle()
-                .fill(Color("MainColor"))
-               
-        }
+
+struct CircleView: View {
+    var body: some View {
+        Circle()
+            .fill(Color("MainColor"))
     }
+}
+
+struct BasicDrinkButton: View {
+    
+    var drinkIcon: String
+    var drinkText: String
+    
+    var body: some View {
+        Button(action: {}, label: {
+            VStack {
+                ZStack {
+                    CircleView()
+                        .frame(width:80, height: 80)
+                    Image(drinkIcon)
+                }
+                Text(drinkText)
+                    .foregroundColor(.black)
+            }
+        })
+    }
+}
