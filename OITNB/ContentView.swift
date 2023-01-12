@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var bac : String = ""
+    
+    private let drinks = [Circle(), Circle(), Circle(), Circle(), Circle()]
+    
+    @EnvironmentObject var appData : AppData
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        MainScreenView()
     }
 }
 
