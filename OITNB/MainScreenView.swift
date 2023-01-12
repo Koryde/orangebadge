@@ -10,13 +10,14 @@ import SwiftUI
 struct MainScreenView: View {
     
     @EnvironmentObject var appData : AppData
+    @AppStorage("bacValue") var bacValue : String = "0.000"
     private let drinks = [Circle(), Circle(), Circle(), Circle(), Circle()]
     
     var body: some View {
         NavigationStack {
             GeometryReader { geo in
                 VStack(spacing: 50) {
-                    BACView(bacImage: "exclamationmark.triangle.fill", bacLevel: "0.000", bacDescription: "Warning!")
+                    BACView(bacImage: "exclamationmark.triangle.fill", bacDescription: "Warning!")
                     BasicDrinksView()
                     HStack {
                         Text("My Drinks")
@@ -29,7 +30,7 @@ struct MainScreenView: View {
                     }
                     Carousel(pageWidth: geo.size.width/2, content: drinks)
                 }
-            .padding()
+                .padding()
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing, content: {
@@ -40,7 +41,9 @@ struct MainScreenView: View {
                             .foregroundColor(Color("MainColor"))
                     })
                 })
-        }
+            }
+        }.onAppear{
+            bacValue = "0.000"
         }
     }
 }
