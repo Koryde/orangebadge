@@ -23,7 +23,7 @@ struct BACView: View {
                     .foregroundColor(.red)
                 Text(bacDescription)
             }
-            Text("BAC: \(bacValue)(g/l)")
+            Text("BAC: \(bacValue)(g/L)")
         }
     }
 }
