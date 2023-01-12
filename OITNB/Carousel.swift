@@ -16,7 +16,7 @@ struct Carousel<Content: View>: View {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(alignment: .center, spacing: 0) {
+            HStack(alignment: .center, spacing: 1) {
                 ForEach(content.indices) { index in
                     self.content[index]
                         .frame(width: self.pageWidth, height: nil)
@@ -37,9 +37,10 @@ struct Carousel<Content: View>: View {
                 }
         )
     }
-    
+    // this allows the snapping of the element in the middle of the screen
     private func newIndex(_ translation: CGFloat, currentIndex: Int) -> Int {
         let snapDistance = pageWidth / 2
+        // this allows going back to first item when last is reached
         let newIndex: Int
         if translation > -snapDistance {
             newIndex = currentIndex + 1 >= content.count ? 0 : currentIndex + 1
