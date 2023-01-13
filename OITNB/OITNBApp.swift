@@ -9,10 +9,18 @@ import SwiftUI
 
 @main
 struct OITNBApp: App {
+    @AppStorage ("needsAppOnBoarding") private var needsAppOnBoarding: Bool = true
     var body: some Scene {
         WindowGroup {
             let appData = AppData()
-            ContentView().environmentObject(appData)
+            
+            if needsAppOnBoarding{
+                OnBoardingView()
+            } else {
+                ContentView().environmentObject(appData)
+            }
+            
+            
         }
     }
 }

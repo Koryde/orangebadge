@@ -29,19 +29,25 @@ struct ContentView: View {
                         })
                     }
                     Carousel(pageWidth: geo.size.width/2, content: drinks)
+                        
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing, content: {
+                        Button(action: {
+                            
+                        }, label: {
+                            Image(systemName: "person.circle.fill")
+                                .foregroundColor(Color("MainColor"))
+                        })
+                        .transaction { transaction in
+                            transaction.animation = nil
+                        }
+                    })
                 }
                 .padding()
+                
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing, content: {
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(systemName: "person.circle.fill")
-                            .foregroundColor(Color("MainColor"))
-                    })
-                })
-            }
+            
         }.onAppear{
             bacValue = "0.000"
         }

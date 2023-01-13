@@ -47,6 +47,7 @@
 		AC29A2F52970570F00486EF0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				43E32C3E2970195100F1A653 /* OnBoardingView.swift */,
 				697894AE296ECA6E00EA2455 /* ContentView.swift */,
 			);
 			path = View;
@@ -64,7 +65,6 @@
 			isa = PBXGroup;
 			children = (
 				43E32C3C29700DA400F1A653 /* BACView.swift */,
-				43E32C3E2970195100F1A653 /* OnBoardingView.swift */,
 				43E32C3A296ED9E800F1A653 /* Carousel.swift */,
 				697894B0296ED31D00EA2455 /* BasicDrinksView.swift */,
 				ACB0CF142970266400D43940 /* LiverLiquidView.swift */,
