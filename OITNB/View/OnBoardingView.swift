@@ -13,8 +13,8 @@ struct OnBoardingView: View {
     @State var isAnimating: Bool = false
     @State var gender = ["Male", "Female", "Prefer not to say"]
     @State var selectedGender = "Male"
-    @State var weight = Array(stride(from: 30, to: 350, by: 1))
-    @State var selectedWeight = 45
+    @State var weight = Array(stride(from: 35, to: 200, by: 1))
+    @State var selectedWeight = 65
     
     var body: some View {
         ZStack {
