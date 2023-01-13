@@ -21,7 +21,7 @@ struct LiverLiquidView: View {
                     
                     ZStack {
                         LiquidWave(progress: progress, waveHeight: 0.05, offset: startAnimation)
-                            .fill(.orange)
+                            .fill(Color("MainColor"))
                             .mask {
                                 Image("liver.fill")
                                     .resizable()
