@@ -7,6 +7,7 @@
 
 import SwiftUI
 ///
+//////
 struct OnBoardingView: View {
     @State var gender = ["Male", "Female", "Prefer not to say"]
     @State var selectedGender = "Male"
@@ -53,6 +54,7 @@ struct OnBoardingView: View {
                             Text("\(_weight)")
                         }
                     }
+                   
                     Text("Kg")
                         .font(.title3)
                         .fontWeight(.medium)
