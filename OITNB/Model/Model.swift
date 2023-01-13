@@ -59,14 +59,14 @@ class AppData : ObservableObject {
     
     // MARK: List of Drinks
     @Published var allDrinks : [Drink] =
-[Drink(category: .mediumDrink,name: "Mimosa",alcoholByVolume: 12.0,milliliters: 150.0),
- Drink(category: .mediumDrink,name: "Aperol Spritz",alcoholByVolume: 11.0,milliliters: 150.0),
- Drink(category: .mediumDrink, name: "Moscow Mule", alcoholByVolume: 12.0, milliliters: 175.0),
- Drink(category: .mediumDrink, name: "Cuba Libre", alcoholByVolume: 12.0, milliliters: 180.0),
- Drink(category: .mediumDrink, name: "Pina Colada", alcoholByVolume: 17.0, milliliters: 130.0),
- Drink(category: .mediumDrink, name: "Gin Tonic", alcoholByVolume: 17.0, milliliters: 140.0),
- Drink(category: .mediumDrink, name: "Mojito", alcoholByVolume: 18.0, milliliters: 180.0)
-]
+    [Drink(category: .mediumDrink,name: "Mimosa",alcoholByVolume: 12.0,milliliters: 150.0),
+     Drink(category: .mediumDrink,name: "Aperol Spritz",alcoholByVolume: 11.0,milliliters: 150.0),
+     Drink(category: .mediumDrink, name: "Moscow Mule", alcoholByVolume: 12.0, milliliters: 175.0),
+     Drink(category: .mediumDrink, name: "Cuba Libre", alcoholByVolume: 12.0, milliliters: 180.0),
+     Drink(category: .mediumDrink, name: "Pina Colada", alcoholByVolume: 17.0, milliliters: 130.0),
+     Drink(category: .mediumDrink, name: "Gin Tonic", alcoholByVolume: 17.0, milliliters: 140.0),
+     Drink(category: .mediumDrink, name: "Mojito", alcoholByVolume: 18.0, milliliters: 180.0)
+    ]
     
     // MARK: Functions
     func calculateBac(drink: Drink, myWeight: Double, myGender: String, haveEat: Bool, bacValue: String) -> Double {
@@ -85,6 +85,12 @@ class AppData : ObservableObject {
                 coefficientC = 0.9
             } else {
                 coefficientC = 0.5
+            }
+        } else {
+            if haveEat {
+                coefficientC = 1.05
+            } else {
+                coefficientC = 0.6
             }
         }
         let bloodAlcoholConcentration = gramsOfAlcohol / (myWeight * coefficientC)

@@ -10,6 +10,8 @@ import SwiftUI
 struct OnBoardingView: View {
     @Environment(\.colorScheme) var colorScheme
     @AppStorage("needsAppOnBoarding") private var needsAppOnBoarding: Bool = true
+    @AppStorage("myGender") var myGender : String = ""
+    @AppStorage("myWeight") var myWeight : Double = 0.0
     @State var isAnimating: Bool = false
     @State var gender = ["Male", "Female", "Prefer not to say"]
     @State var selectedGender = "Male"
@@ -77,6 +79,8 @@ struct OnBoardingView: View {
                 
                 Button(action: {
                     needsAppOnBoarding.toggle()
+                    myGender = selectedGender
+                    myWeight = Double(selectedWeight)
                     
                 }, label: {
                     Text("Get Drunk")
