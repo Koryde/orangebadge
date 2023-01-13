@@ -10,7 +10,7 @@ import SwiftUI
 struct LiverLiquidView: View {
     
     @AppStorage("bacValue") var bacValue : String = "0.000"
-    @State var progress : CGFloat = 0.0
+    @State var progress : CGFloat = 0.5
     @State var startAnimation : CGFloat = 0
     
     var body: some View {
@@ -39,8 +39,8 @@ struct LiverLiquidView: View {
                     }.frame(width: size.width, height: size.height, alignment: .center)
                         .onAppear{
                             // Looping Animation
-                            withAnimation(.linear(duration: 2).repeatForever(autoreverses: false)) {
-                                startAnimation = size.width
+                            withAnimation(.easeInOut(duration: 5).repeatForever(autoreverses: true)) {
+                                startAnimation = size.width*2
                             }
                         }
                 }.frame(height: 350)
