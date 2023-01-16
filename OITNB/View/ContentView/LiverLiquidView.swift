@@ -20,7 +20,7 @@ struct LiverLiquidView: View {
                     let size = proxy.size
                     
                     ZStack {
-                        LiquidWave(progress: progress, waveHeight: 0.05, offset: startAnimation)
+                        LiquidWave(progress: progress, waveHeight: 0.025, offset: startAnimation)
                             .fill(Color("MainColor"))
                             .mask {
                                 Image("liver.fill")
@@ -40,7 +40,7 @@ struct LiverLiquidView: View {
                         .onAppear{
                             // Looping Animation
                             withAnimation(.easeInOut(duration: 5).repeatForever(autoreverses: true)) {
-                                startAnimation = size.width*2
+                                startAnimation = size.width
                             }
                         }
                 }.frame(height: 350)
