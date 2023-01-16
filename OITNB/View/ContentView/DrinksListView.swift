@@ -26,6 +26,22 @@ struct DrinksListView: View {
                 }
             }
             .searchable(text: $searchText, prompt: "Search for a drink")
+            .toolbar {
+                //Button to add new drink
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button(action: {
+                        
+                    }, label:  {
+                        HStack {
+                            Image(systemName: "plus.circle.fill")
+                            Text("Add drink")
+//                            Spacer()
+                        }
+                        .foregroundColor(Color("MainColor"))
+                    })
+                    Spacer()
+                }
+            }
         }
     }
     func filterTags() -> some View {
