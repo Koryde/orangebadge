@@ -11,7 +11,7 @@ import SwiftUI
 struct OITNBApp: App {
     
     @AppStorage ("needsAppOnBoarding") private var needsAppOnBoarding: Bool = true
-    
+
     var body: some Scene {
         
         let drinkViewModel = DrinkViewModel()
