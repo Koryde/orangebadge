@@ -10,7 +10,7 @@ import SwiftUI
 
 struct BasicDrinksView: View {
     
-    @EnvironmentObject var drinkViewModel : DrinkViewModel
+//    @EnvironmentObject var drinkViewModel : DrinkViewModel
 
     private var basicDrinks = [Drink(category: Category.shot, name: "Shot", alcoholByVolume: 30.0, milliliters: 40.0), Drink(category: Category.wine, name: "Wine", alcoholByVolume: 13.0, milliliters: 125.0), Drink(category: Category.beer, name: "Beer", alcoholByVolume: 5.0, milliliters: 330.0), Drink(category: Category.shortDrink, name: "Cocktail", alcoholByVolume: 19.0, milliliters: 100.0)]
     
