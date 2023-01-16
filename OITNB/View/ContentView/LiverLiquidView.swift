@@ -10,7 +10,7 @@ import SwiftUI
 struct LiverLiquidView: View {
     
     @AppStorage("bacValue") var bacValue : String = "0.000"
-    @State var progress : CGFloat = 0.5
+    @State var progress : CGFloat = 0.0
     @State var startAnimation : CGFloat = 0
     
     var body: some View {
