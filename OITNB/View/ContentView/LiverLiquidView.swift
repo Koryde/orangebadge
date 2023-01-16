@@ -39,8 +39,8 @@ struct LiverLiquidView: View {
                     }.frame(width: size.width, height: size.height, alignment: .center)
                         .onAppear{
                             // Looping Animation
-                            withAnimation(.linear(duration: 2).repeatForever(autoreverses: false)) {
-                                startAnimation = size.width
+                            withAnimation(.easeInOut(duration: 5).repeatForever(autoreverses: true)) {
+                                startAnimation = size.width*2
                             }
                         }
                 }.frame(height: 350)

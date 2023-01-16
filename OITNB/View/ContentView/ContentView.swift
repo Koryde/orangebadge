@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var appData : AppData
+    @EnvironmentObject var drinkViewModel : DrinkViewModel
     @AppStorage("bacValue") var bacValue : String = "0.000"
     private let drinks = [Circle(), Circle(), Circle(), Circle(), Circle()]
     
@@ -29,19 +29,25 @@ struct ContentView: View {
                         })
                     }
                     Carousel(pageWidth: geo.size.width/2, content: drinks)
+                        
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing, content: {
+                        Button(action: {
+                            
+                        }, label: {
+                            Image(systemName: "person.circle.fill")
+                                .foregroundColor(Color("MainColor"))
+                        })
+                        .transaction { transaction in
+                            transaction.animation = nil
+                        }
+                    })
                 }
                 .padding()
+                
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing, content: {
-                    Button(action: {
-                        
-                    }, label: {
-                        Image(systemName: "person.circle.fill")
-                            .foregroundColor(Color("MainColor"))
-                    })
-                })
-            }
+            
         }.onAppear{
             bacValue = "0.000"
         }
