@@ -12,7 +12,7 @@ struct BasicDrinksView: View {
     
 //    @EnvironmentObject var drinkViewModel : DrinkViewModel
 
-    private var basicDrinks = [Drink(category: Category.shot, name: "Shot", alcoholByVolume: 30.0, milliliters: 40.0), Drink(category: Category.wine, name: "Wine", alcoholByVolume: 13.5, milliliters: 175.0), Drink(category: Category.beer, name: "Beer", alcoholByVolume: 5.0, milliliters: 330.0), Drink(category: Category.shortDrink, name: "Cocktail", alcoholByVolume: 19.0, milliliters: 100.0)]
+    private var basicDrinks = [Drink(category: Category.shot, name: "Shot", alcoholByVolume: 43.15, milliliters: 30.0), Drink(category: Category.wine, name: "Wine", alcoholByVolume: 13.5, milliliters: 175.0), Drink(category: Category.beer, name: "Beer", alcoholByVolume: 7.5, milliliters: 375.0), Drink(category: Category.shortDrink, name: "Cocktail", alcoholByVolume: 28.56, milliliters: 80.6)]
     
     
     var body: some View {
