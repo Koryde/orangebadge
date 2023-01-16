@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43BDD875297548730084FC41 /* DrinksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDD874297548730084FC41 /* DrinksListView.swift */; };
 		43E32C3B296ED9E800F1A653 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E32C3A296ED9E800F1A653 /* Carousel.swift */; };
 		43E32C3D29700DA400F1A653 /* BACView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E32C3C29700DA400F1A653 /* BACView.swift */; };
 		43E32C3F2970195100F1A653 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E32C3E2970195100F1A653 /* OnBoardingView.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43BDD874297548730084FC41 /* DrinksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksListView.swift; sourceTree = "<group>"; };
 		43E32C3A296ED9E800F1A653 /* Carousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		43E32C3C29700DA400F1A653 /* BACView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BACView.swift; sourceTree = "<group>"; };
 		43E32C3E2970195100F1A653 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				697894AE296ECA6E00EA2455 /* ContentView.swift */,
+				43BDD874297548730084FC41 /* DrinksListView.swift */,
 				43E32C3C29700DA400F1A653 /* BACView.swift */,
 				43E32C3A296ED9E800F1A653 /* Carousel.swift */,
 				697894B0296ED31D00EA2455 /* BasicDrinksView.swift */,
@@ -201,6 +204,7 @@
 				697894B1296ED31D00EA2455 /* BasicDrinksView.swift in Sources */,
 				ACBB41FB296EC9ED001C6CC1 /* Drink.swift in Sources */,
 				43E32C3B296ED9E800F1A653 /* Carousel.swift in Sources */,
+				43BDD875297548730084FC41 /* DrinksListView.swift in Sources */,
 				697894AF296ECA6E00EA2455 /* ContentView.swift in Sources */,
 				ACD1AEA22975415600B49BFF /* Drink+ViewModel.swift in Sources */,
 				ACB0CF152970266400D43940 /* LiverLiquidView.swift in Sources */,

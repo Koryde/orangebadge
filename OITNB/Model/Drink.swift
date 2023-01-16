@@ -9,7 +9,12 @@ import Foundation
 import SwiftUI
 
 enum Category : String, CaseIterable {
-    case shot, beer, wine, shortDrink, mediumDrink, longDrink
+    case shot = "Shots"
+    case beer = "Beers"
+    case wine = "Wines"
+    case shortDrink = "Short Drinks"
+    case mediumDrink = "Medium Drinks"
+    case longDrink = "Long Drinks"
     
     var name : String {
         switch self {
@@ -41,6 +46,23 @@ enum Category : String, CaseIterable {
             return ""
         case .longDrink:
             return ""
+        }
+    }
+    
+    var listIconName : String {
+        switch self {
+        case .shot :
+            return "OrangeShot"
+        case .beer:
+            return "OrangeBeer"
+        case .wine:
+            return "OrangeWine"
+        case .shortDrink:
+            return "OrangeCocktail"
+        case .mediumDrink:
+            return "OrangeCocktail"
+        case .longDrink:
+            return "OrangeCocktail"
         }
     }
     
