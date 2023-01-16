@@ -85,7 +85,7 @@ class AppData : ObservableObject {
      //WINES LIST
      Drink(category: .wine, name: "Red Wine", alcoholByVolume: 13.5, milliliters: 200.0),
      Drink(category: .wine, name: "White Wine", alcoholByVolume: 13.5, milliliters: 150.0),
-     Drink(category: .wine, name: "Rosé Wine", alcoholByVolume: 12.0, milliliters: 200.0)
+     Drink(category: .wine, name: "Rosé Wine", alcoholByVolume: 12.0, milliliters: 200.0),
      //SHOTS LIST
      Drink(category: .shot, name: "Tequila", alcoholByVolume: 40.0, milliliters: 30.0),
      Drink(category: .shot, name: "Jägermeister", alcoholByVolume: 35.0, milliliters: 30.0),
@@ -94,7 +94,7 @@ class AppData : ObservableObject {
      Drink(category: .shot, name: "Asbinthe", alcoholByVolume: 65.0, milliliters: 30.0),
      Drink(category: .shot, name: "Goldschlager", alcoholByVolume: 40.0, milliliters: 30.0),
      Drink(category: .shot, name: "Bacardi 151", alcoholByVolume: 75.5, milliliters: 15.0),
-     Drink(category: .shot, name: "Rakia", alcoholByVolume: 50.0, milliliters: 30.0)
+     Drink(category: .shot, name: "Rakia", alcoholByVolume: 50.0, milliliters: 30.0),
      Drink(category: .shot, name: "Smooth Vodka", alcoholByVolume: 40.0, milliliters: 30.0),
      Drink(category: .shot, name: "Whiskey", alcoholByVolume: 40.0, milliliters: 30.0),
      Drink(category: .shot, name: "Rum", alcoholByVolume: 40.0, milliliters: 30.0),
