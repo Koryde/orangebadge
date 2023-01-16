@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @EnvironmentObject var appData : AppData
+    @EnvironmentObject var drinkViewModel : DrinkViewModel
     @AppStorage("bacValue") var bacValue : String = "0.000"
     private let drinks = [Circle(), Circle(), Circle(), Circle(), Circle()]
     
