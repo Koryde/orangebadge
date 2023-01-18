@@ -43,9 +43,9 @@ enum Category : String, CaseIterable {
         case .shortDrink:
             return "CocktailGlass"
         case .mediumDrink:
-            return ""
+            return "CocktailGlass"
         case .longDrink:
-            return ""
+            return "CocktailGlass"
         }
     }
     
@@ -68,7 +68,7 @@ enum Category : String, CaseIterable {
     
 }
 
-struct Drink : Identifiable, Hashable {
+struct Drink: Identifiable, Hashable {
     let id = UUID()
     var category : Category
     var name : String
@@ -76,5 +76,3 @@ struct Drink : Identifiable, Hashable {
     var milliliters : Double
     var isFavorite : Bool = false
 }
-
-

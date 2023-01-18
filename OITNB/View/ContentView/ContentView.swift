@@ -9,9 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
-//    @EnvironmentObject var drinkViewModel : DrinkViewModel
+    @EnvironmentObject var vm: DrinkViewModel
     @AppStorage("bacValue") var bacValue : String = "0.000"
-    private let drinks = [Circle(), Circle(), Circle(), Circle(), Circle()]
     
     var body: some View {
         NavigationStack {
@@ -23,13 +22,14 @@ struct ContentView: View {
                         Text("My Drinks")
                             .bold()
                         Spacer()
-                        Button(action: {}, label: {
-                            Image(systemName: "plus.circle.fill")
+                        NavigationLink(destination: {
+                            DrinksListView()
+                        }, label: {
+                            Text("Full List")
                                 .foregroundColor(Color("MainColor"))
                         })
                     }
-                    Carousel(pageWidth: geo.size.width/2, content: drinks)
-                        
+                    Carousel(pageWidth: geo.size.width/2)
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing, content: {
@@ -48,7 +48,9 @@ struct ContentView: View {
                 
             }
             
-        }.onAppear{
+        }
+        .preferredColorScheme(.dark)
+        .onAppear{
             bacValue = "0.000"
         }
     }

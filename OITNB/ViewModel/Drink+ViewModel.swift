@@ -55,6 +55,14 @@ class DrinkViewModel : ObservableObject {
      Drink(category: .shot, name: "Latte di Suocera", alcoholByVolume: 70.0, milliliters: 30.0)
     ]
     
+    @Published var carouselElements: [CarouselElement] = []
+
+    init() {
+        for _ in allDrinks {
+            carouselElements = allDrinks.filter { $0.isFavorite }.map { CarouselElement(drink: $0) }
+        }
+    }
+   
     // MARK: Functions
     func calculateBac(drink: Drink, myWeight: Double, myGender: String, haveEat: Bool, bacValue: String) -> Double {
         // Calculate the grams of alcohol in a drink
@@ -89,9 +97,14 @@ class DrinkViewModel : ObservableObject {
         }
     }
     
+    func updateCarouselElements() {
+            carouselElements = allDrinks.filter { $0.isFavorite }.map { CarouselElement(drink: $0) }
+        }
+    
     func addToFavorite(drink: Drink) {
         let index = allDrinks.firstIndex{$0.id == drink.id}
         allDrinks[index!].isFavorite.toggle()
+        self.updateCarouselElements()
     }
     
 }
