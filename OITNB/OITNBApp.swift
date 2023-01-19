@@ -22,6 +22,9 @@ struct OITNBApp: App {
                 OnBoardingView()
             } else {
                 ContentView().environmentObject(drinkViewModel)
+                    .task {
+                        await drinkViewModel.getDrink()
+                    }
             }
             
         }

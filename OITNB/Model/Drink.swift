@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum Category : String, CaseIterable {
+enum Category : String, CaseIterable, Codable {
     case shot = "Shots"
     case beer = "Beers"
     case wine = "Wines"
@@ -68,11 +68,20 @@ enum Category : String, CaseIterable {
     
 }
 
-struct Drink: Identifiable, Hashable {
-    let id = UUID()
-    var category : Category
-    var name : String
-    var alcoholByVolume : Double
-    var milliliters : Double
-    var isFavorite : Bool = false
+//struct CreateDrink: Identifiable, Hashable {
+//    let id = UUID()
+//    var category : Category
+//    var name : String
+//    var alcoholByVolume : Double
+//    var milliliters : Double
+//    var isFavorite : Bool = false
+//}
+
+struct Drink: Codable, Hashable, Identifiable {
+    let id: UUID
+    let category: Category
+    let name: String
+    let alcoholByVolume: Double
+    let milliliters: Double
+    var isFavorite: Bool
 }
