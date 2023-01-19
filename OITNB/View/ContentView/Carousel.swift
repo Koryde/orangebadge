@@ -61,7 +61,8 @@ struct Carousel: View {
 }
 
 struct CarouselElement: View {
-    
+    @Environment(\.colorScheme) var colorScheme
+
     @EnvironmentObject var vm: DrinkViewModel
     var drink: Drink
     
@@ -70,8 +71,12 @@ struct CarouselElement: View {
             Circle()
                 .foregroundColor(Color("MainColor"))
             VStack {
+                colorScheme == .light ?
                 Image(drink.category.iconName)
+                :
+                Image(drink.category.iconNameBlack)
                 Text(drink.name)
+                    .foregroundColor(Color("InvertText"))
             }
         }
     }

@@ -20,7 +20,8 @@ struct ContentView: View {
                     BasicDrinksView()
                     HStack {
                         Text("My Drinks")
-                            .bold()
+                            .font(.title2)
+                            .fontWeight(.semibold)
                         Spacer()
                         NavigationLink(destination: {
                             DrinksListView()
@@ -49,7 +50,7 @@ struct ContentView: View {
             }
             
         }
-        .preferredColorScheme(.dark)
+//        .preferredColorScheme(.dark)
         .onAppear{
             bacValue = "0.000"
         }

@@ -48,8 +48,25 @@ enum Category : String, CaseIterable, Codable {
             return "CocktailGlass"
         }
     }
+    var iconNameBlack : String {
+        switch self {
+        case .shot:
+            return "DrinkingGlassBlack"
+        case .beer:
+            return "BeerGlassBlack"
+        case .wine:
+            return "WineGlassBlack"
+        case .shortDrink:
+            return "CocktailGlassBlack"
+        case .mediumDrink:
+            return "CocktailGlassBlack"
+        case .longDrink:
+            return "CocktailGlassBlack"
+        }
+    }
     
     var listIconName : String {
+        
         switch self {
         case .shot :
             return "OrangeShot"
@@ -67,15 +84,6 @@ enum Category : String, CaseIterable, Codable {
     }
     
 }
-
-//struct CreateDrink: Identifiable, Hashable {
-//    let id = UUID()
-//    var category : Category
-//    var name : String
-//    var alcoholByVolume : Double
-//    var milliliters : Double
-//    var isFavorite : Bool = false
-//}
 
 struct Drink: Codable, Hashable, Identifiable {
     let id: UUID

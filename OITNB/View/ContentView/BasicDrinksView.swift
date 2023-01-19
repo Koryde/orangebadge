@@ -40,6 +40,7 @@ struct CircleView: View {
 }
 
 struct BasicDrinkButton: View {
+    @Environment(\.colorScheme) var colorScheme
     
     @EnvironmentObject var drinkViewModel : DrinkViewModel
     @AppStorage("bacValue") var bacValue : String = "0.000"
@@ -55,10 +56,13 @@ struct BasicDrinkButton: View {
                 ZStack {
                     CircleView()
                         .frame(width:80, height: 80)
+                    colorScheme == .light ?
                     Image(drink.category.iconName)
+                    :
+                    Image(drink.category.iconNameBlack)
                 }
                 Text(drink.name)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("RightText"))
             }
         })
     }
