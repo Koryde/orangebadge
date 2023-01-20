@@ -16,6 +16,7 @@
 		ACB0CF152970266400D43940 /* LiverLiquidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0CF142970266400D43940 /* LiverLiquidView.swift */; };
 		ACBB41FB296EC9ED001C6CC1 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB41FA296EC9ED001C6CC1 /* Drink.swift */; };
 		ACD1AEA22975415600B49BFF /* Drink+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1AEA12975415600B49BFF /* Drink+ViewModel.swift */; };
+		EFB0F62E29799905002F6774 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFB0F62D29799905002F6774 /* AccountView.swift */; };
 		EFEE8421296EBE8F00141046 /* OITNBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFEE8420296EBE8F00141046 /* OITNBApp.swift */; };
 		EFEE8425296EBE9000141046 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFEE8424296EBE9000141046 /* Assets.xcassets */; };
 		EFEE8428296EBE9000141046 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFEE8427296EBE9000141046 /* Preview Assets.xcassets */; };
@@ -31,6 +32,7 @@
 		ACB0CF142970266400D43940 /* LiverLiquidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiverLiquidView.swift; sourceTree = "<group>"; };
 		ACBB41FA296EC9ED001C6CC1 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		ACD1AEA12975415600B49BFF /* Drink+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drink+ViewModel.swift"; sourceTree = "<group>"; };
+		EFB0F62D29799905002F6774 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		EFEE841D296EBE8F00141046 /* OITNB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OITNB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFEE8420296EBE8F00141046 /* OITNBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OITNBApp.swift; sourceTree = "<group>"; };
 		EFEE8424296EBE9000141046 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				43E32C3A296ED9E800F1A653 /* Carousel.swift */,
 				697894B0296ED31D00EA2455 /* BasicDrinksView.swift */,
 				ACB0CF142970266400D43940 /* LiverLiquidView.swift */,
+				EFB0F62D29799905002F6774 /* AccountView.swift */,
 			);
 			path = ContentView;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				ACBB41FB296EC9ED001C6CC1 /* Drink.swift in Sources */,
 				43E32C3B296ED9E800F1A653 /* Carousel.swift in Sources */,
 				43BDD875297548730084FC41 /* DrinksListView.swift in Sources */,
+				EFB0F62E29799905002F6774 /* AccountView.swift in Sources */,
 				697894AF296ECA6E00EA2455 /* ContentView.swift in Sources */,
 				ACD1AEA22975415600B49BFF /* Drink+ViewModel.swift in Sources */,
 				ACB0CF152970266400D43940 /* LiverLiquidView.swift in Sources */,

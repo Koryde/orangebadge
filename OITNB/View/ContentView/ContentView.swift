@@ -34,8 +34,8 @@ struct ContentView: View {
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing, content: {
-                        Button(action: {
-                            
+                        NavigationLink(destination: {
+                            AccountView()
                         }, label: {
                             Image(systemName: "person.circle.fill")
                                 .foregroundColor(Color("MainColor"))
