@@ -1,0 +1,283 @@
+[
+    {
+        "isFavorite": false,
+        "id": "8E5AEBC5-B938-444D-B8AB-9A61BCB98D30",
+        "alcoholByVolume": 12,
+        "name": "Mimosa",
+        "category": "Medium Drinks",
+        "milliliters": 150
+    },
+    {
+        "isFavorite": false,
+        "id": "358F76BE-8238-4CEF-9616-98E8B2CEAE16",
+        "alcoholByVolume": 11,
+        "name": "Aperol Spritz",
+        "category": "Medium Drinks",
+        "milliliters": 150
+    },
+    {
+        "isFavorite": false,
+        "id": "226771A8-D50D-4905-857B-17C4BB7FB443",
+        "alcoholByVolume": 12,
+        "name": "Moscow Mule",
+        "category": "Medium Drinks",
+        "milliliters": 175
+    },
+    {
+        "isFavorite": false,
+        "id": "2EA2A13E-B27B-4A90-92F3-F1BBB2DF9D67",
+        "alcoholByVolume": 17,
+        "name": "Pina Colada",
+        "category": "Medium Drinks",
+        "milliliters": 130
+    },
+    {
+        "isFavorite": false,
+        "id": "D10F4810-79C0-43CA-9903-3768FC4FB007",
+        "alcoholByVolume": 17,
+        "name": "Gin Tonic",
+        "category": "Medium Drinks",
+        "milliliters": 140
+    },
+    {
+        "isFavorite": false,
+        "id": "61269D7F-3CCE-4A0A-B269-1B77E06BAB8C",
+        "alcoholByVolume": 18,
+        "name": "Mojito",
+        "category": "Medium Drinks",
+        "milliliters": 180
+    },
+    {
+        "isFavorite": false,
+        "id": "762F6B53-87BE-4D7C-A4A5-BE242748C6AE",
+        "alcoholByVolume": 16,
+        "name": "Classic Sangria",
+        "category": "Medium Drinks",
+        "milliliters": 180
+    },
+    {
+        "isFavorite": false,
+        "id": "575F56E8-5376-49AF-9164-C9543D9B6E01",
+        "alcoholByVolume": 29,
+        "name": "Negroni",
+        "category": "Short Drinks",
+        "milliliters": 90
+    },
+    {
+        "isFavorite": false,
+        "id": "54C13D27-1829-43ED-BC1F-2FAB8D61103D",
+        "alcoholByVolume": 35,
+        "name": "Angelo Azzurro",
+        "category": "Short Drinks",
+        "milliliters": 110
+    },
+    {
+        "isFavorite": false,
+        "id": "DA42F79D-A658-490F-9BAF-B60E0E77E149",
+        "alcoholByVolume": 30,
+        "name": "Manhattan",
+        "category": "Short Drinks",
+        "milliliters": 70
+    },
+    {
+        "isFavorite": false,
+        "id": "DBDAA8FA-3023-4D11-AC1C-7C7368B0A317",
+        "alcoholByVolume": 29.800000000000001,
+        "name": "Dry Martini",
+        "category": "Short Drinks",
+        "milliliters": 70
+    },
+    {
+        "isFavorite": false,
+        "id": "84DB2866-C2B6-496C-80AA-97E67A591FAA",
+        "alcoholByVolume": 30,
+        "name": "Godfather",
+        "category": "Short Drinks",
+        "milliliters": 70
+    },
+    {
+        "isFavorite": false,
+        "id": "02710641-D0AD-4FD7-B220-CB1FE83B8AEF",
+        "alcoholByVolume": 36,
+        "name": "Caipirinha",
+        "category": "Short Drinks",
+        "milliliters": 60
+    },
+    {
+        "isFavorite": false,
+        "id": "23F18EDB-3201-4B2B-BA31-70718996BB26",
+        "alcoholByVolume": 25.399999999999999,
+        "name": "Margarita",
+        "category": "Short Drinks",
+        "milliliters": 85
+    },
+    {
+        "isFavorite": false,
+        "id": "2E6C867B-6CA1-426E-B1A9-BCB735CAE884",
+        "alcoholByVolume": 13.300000000000001,
+        "name": "Whiskey Sour",
+        "category": "Short Drinks",
+        "milliliters": 90
+    },
+    {
+        "isFavorite": false,
+        "id": "8816FBA5-67B6-40D7-931C-636B66F99825",
+        "alcoholByVolume": 12,
+        "name": "Cuba Libre",
+        "category": "Long Drinks",
+        "milliliters": 180
+    },
+    {
+        "isFavorite": false,
+        "id": "2DC14381-57FC-4C63-AF61-A602EC5A6927",
+        "alcoholByVolume": 17,
+        "name": "Daiquiri",
+        "category": "Long Drinks",
+        "milliliters": 80
+    },
+    {
+        "isFavorite": false,
+        "id": "6ACC6615-8604-4B9B-879F-FEA61379E70C",
+        "alcoholByVolume": 7.5,
+        "name": "Small Beer",
+        "category": "Beers",
+        "milliliters": 25
+    },
+    {
+        "isFavorite": false,
+        "id": "2DC49574-0CF8-43AF-90CB-23322AA56D8A",
+        "alcoholByVolume": 7.5,
+        "name": "Big Beer",
+        "category": "Beers",
+        "milliliters": 50
+    },
+    {
+        "isFavorite": false,
+        "id": "4B0A9D9F-9831-4CFF-B0DF-E69B6B8DB2FE",
+        "alcoholByVolume": 13.5,
+        "name": "Red Wine",
+        "category": "Wines",
+        "milliliters": 200
+    },
+    {
+        "isFavorite": false,
+        "id": "00469E50-B4B6-4022-898B-EACD7641549E",
+        "alcoholByVolume": 13.5,
+        "name": "White Wine",
+        "category": "Wines",
+        "milliliters": 150
+    },
+    {
+        "isFavorite": false,
+        "id": "AABFA6D6-784A-4118-ADD2-54D9FB6033EE",
+        "alcoholByVolume": 12,
+        "name": "Rosé Wine",
+        "category": "Wines",
+        "milliliters": 200
+    },
+    {
+        "isFavorite": false,
+        "id": "E4FF4C18-A1A4-4785-9A7E-4306A0EC46EB",
+        "alcoholByVolume": 40,
+        "name": "Tequila",
+        "category": "Shots",
+        "milliliters": 30
+    },
+    {
+        "isFavorite": false,
+        "id": "4588B452-5E98-4A55-AD85-606AD7A2A3C5",
+        "alcoholByVolume": 35,
+        "name": "Jägermeister",
+        "category": "Shots",
+        "milliliters": 30
+    },
+    {
+        "isFavorite": false,
+        "id": "46733E48-9506-4768-B942-9FA42759BFB5",
+        "alcoholByVolume": 33.299999999999997,
+        "name": "Fireball Cinnamon Whiskey",
+        "category": "Shots",
+        "milliliters": 30
+    },
+    {
+        "isFavorite": false,
+        "id": "193FD4D4-8A4B-4763-A42F-5D2292700A2E",
+        "alcoholByVolume": 38,
+        "name": "Sambuca",
+        "category": "Shots",
+        "milliliters": 30
+    },
+    {
+        "isFavorite": false,
+        "id": "3CC5C668-5FAB-4A20-B571-80B651A60BD7",
+        "alcoholByVolume": 65,
+        "name": "Asbinthe",
+        "category": "Shots",
+        "milliliters": 30
+    },
+    {
+        "isFavorite": false,
+        "id": "5ACEFDC5-EBB2-4100-BB3D-1425C1C18E57",
+        "alcoholByVolume": 40,
+        "name": "Goldschlager",
+        "category": "Shots",
+        "milliliters": 30
+    },
+    {
+        "isFavorite": false,
+        "id": "0C3ED002-DCB0-4688-B90C-D6D7BAE74111",
+        "alcoholByVolume": 75.5,
+        "name": "Bacardi 151",
+        "category": "Shots",
+        "milliliters": 15
+    },
+    {
+        "isFavorite": false,
+        "id": "06C093A9-65A3-4132-AD41-8A5D38CCB2BF",
+        "alcoholByVolume": 50,
+        "name": "Rakia",
+        "category": "Shots",
+        "milliliters": 30
+    },
+    {
+        "isFavorite": false,
+        "id": "CBEA9716-061A-4C27-A068-0C075F4075A0",
+        "alcoholByVolume": 40,
+        "name": "Smooth Vodka",
+        "category": "Shots",
+        "milliliters": 30
+    },
+    {
+        "isFavorite": false,
+        "id": "E7C63CB5-52CE-499B-AAD0-5C8DEE8E48D8",
+        "alcoholByVolume": 40,
+        "name": "Whiskey",
+        "category": "Shots",
+        "milliliters": 30
+    },
+    {
+        "isFavorite": false,
+        "id": "E0DD9EEE-6F99-40AE-A70C-A820F59B446E",
+        "alcoholByVolume": 40,
+        "name": "Rum",
+        "category": "Shots",
+        "milliliters": 30
+    },
+    {
+        "isFavorite": false,
+        "id": "2FD1AC31-C39C-41A3-BA19-B23062DDD8DD",
+        "alcoholByVolume": 27.5,
+        "name": "B-52",
+        "category": "Shots",
+        "milliliters": 30
+    },
+    {
+        "isFavorite": false,
+        "id": "B6FFC943-129E-48BB-BEDF-EC4466888F33",
+        "alcoholByVolume": 70,
+        "name": "Latte di Suocera",
+        "category": "Shots",
+        "milliliters": 30
+    }
+]
+ 

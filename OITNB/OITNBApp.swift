@@ -23,7 +23,9 @@ struct OITNBApp: App {
             } else {
                 ContentView().environmentObject(drinkViewModel)
                     .task {
-                        await drinkViewModel.getDrink()
+                        if !drinkViewModel.checkJSONFile() {
+                            drinkViewModel.decodeLocalJSON()
+                        }
                     }
             }
             
