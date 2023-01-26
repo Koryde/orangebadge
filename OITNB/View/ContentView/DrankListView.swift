@@ -9,6 +9,9 @@ import SwiftUI
 
 struct DrankListView: View {
     @EnvironmentObject var vm: DrinkViewModel
+    @AppStorage("myGender") var myGender : String = ""
+    @AppStorage("myWeight") var myWeight : Double = 0.0
+    @AppStorage("bacValue") var bacValue : String = "0.000"
 
     var body: some View {
         NavigationStack {
@@ -19,6 +22,11 @@ struct DrankListView: View {
                         .swipeActions(allowsFullSwipe: false) {
                             Button {
                                 vm.removeDrinkFromDrank(drink: drink)
+                                if vm.drankArray.isEmpty {
+                                    bacValue = "0.000"
+                                } else {
+                                    bacValue = String(vm.calculateBac(drink: drink, myWeight: myWeight, myGender: myGender, haveEat: false, bacValue: bacValue, drankListOpen: true))
+                                }
                             } label: {
                                 Image(systemName: "trash")
 //                                Text("Delete")

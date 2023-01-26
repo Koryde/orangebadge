@@ -72,7 +72,7 @@ struct CarouselElement: View {
     
     var body: some View {
         Button(action: {
-            bacValue = String(String(drinkViewModel.calculateBac(drink: drink, myWeight: myWeight, myGender: myGender, haveEat: true, bacValue: bacValue)).prefix(5))
+            bacValue = String(String(drinkViewModel.calculateBac(drink: drink, myWeight: myWeight, myGender: myGender, haveEat: true, bacValue: bacValue, drankListOpen: false)).prefix(5))
             drinkViewModel.addDrinkToDrank(drink: drink)
         }, label: {
             ZStack {

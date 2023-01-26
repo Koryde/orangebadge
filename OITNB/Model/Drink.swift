@@ -92,5 +92,4 @@ struct Drink: Codable, Hashable, Identifiable {
     let alcoholByVolume: Double
     let milliliters: Double
     var isFavorite: Bool
-    var drinkCounter : Int = 0
 }

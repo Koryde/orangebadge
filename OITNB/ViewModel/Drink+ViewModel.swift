@@ -22,7 +22,7 @@ class DrinkViewModel : ObservableObject {
     }
    
     // MARK: Functions
-    func calculateBac(drink: Drink, myWeight: Double, myGender: String, haveEat: Bool, bacValue: String) -> Double {
+    func calculateBac(drink: Drink, myWeight: Double, myGender: String, haveEat: Bool, bacValue: String, drankListOpen: Bool) -> Double {
         // Calculate the grams of alcohol in a drink
         let gramsOfAlcohol = ((drink.alcoholByVolume * 0.8) * (drink.milliliters / 100))
         // Check the coefficient to calculate the BAC
@@ -48,10 +48,11 @@ class DrinkViewModel : ObservableObject {
         }
         let bloodAlcoholConcentration = gramsOfAlcohol / (myWeight * coefficientC)
         // Check if the BAC value is 0.0, if not, add the actual BAC value with the new one.
+        if drankListOpen {
+            return Double(bacValue)! - bloodAlcoholConcentration
+        }
         if bacValue != "0.000" {
             return bloodAlcoholConcentration + Double(bacValue)!
-        } else if drink.drinkCounter != 0 {
-            return Double(bacValue)! - bloodAlcoholConcentration
         } else {
             return bloodAlcoholConcentration
         }
@@ -62,7 +63,7 @@ class DrinkViewModel : ObservableObject {
         }
     
     func addDrinkToDrank(drink: Drink) {
-        increaseDrinkCounter(drink: drink)
+//        increaseDrinkCounter(drink: drink)
         self.drankArray.append(drink)
         print(drankArray)
     }
@@ -72,24 +73,7 @@ class DrinkViewModel : ObservableObject {
             drankArray.remove(at: index)
         }
     }
-    
-    func resetDrinkCounter(drink: Drink) {
-        var drinks = readDrinks()
-        if let index = drinks.firstIndex(where: { $0.id == drink.id }) {
-            drinks[index].drinkCounter = 0
-        }
-    }
-    
-    func resetAllDrinkCounters() {
-        let drinks = readDrinks()
-        for drink in drinks {
-            resetDrinkCounter(drink: drink)
-        }
-        let jsonData = try! jsonEncoder.encode(drinks)
-        try! jsonData.write(to: jsonFileURL)
-        print("Resettati")
-    }
-    
+        
     
     // MARK: API Request
 
@@ -240,25 +224,25 @@ class DrinkViewModel : ObservableObject {
     }
     
     /// Update the Drink Counter
-    func increaseDrinkCounter(drink: Drink) {
-        var drinks = readDrinks()
-        if let index = drinks.firstIndex(where: { $0.id == drink.id }) {
-            drinks[index].drinkCounter += 1
-        }
-        let jsonData = try! jsonEncoder.encode(drinks)
-        try! jsonData.write(to: jsonFileURL)
-        self.updateCarouselElements()
-    }
+//    func increaseDrinkCounter(drink: Drink) {
+//        var drinks = readDrinks()
+//        if let index = drinks.firstIndex(where: { $0.id == drink.id }) {
+//            drinks[index].drinkCounter += 1
+//        }
+//        let jsonData = try! jsonEncoder.encode(drinks)
+//        try! jsonData.write(to: jsonFileURL)
+//        self.updateCarouselElements()
+//    }
     
-    func decreaseDrinkCounter(drink: Drink) {
-        var drinks = readDrinks()
-        if let index = drinks.firstIndex(where: { $0.id == drink.id }) {
-            drinks[index].drinkCounter -= 1
-        }
-        let jsonData = try! jsonEncoder.encode(drinks)
-        try! jsonData.write(to: jsonFileURL)
-        self.updateCarouselElements()
-    }
+//    func decreaseDrinkCounter(drink: Drink) {
+//        var drinks = readDrinks()
+//        if let index = drinks.firstIndex(where: { $0.id == drink.id }) {
+//            drinks[index].drinkCounter -= 1
+//        }
+//        let jsonData = try! jsonEncoder.encode(drinks)
+//        try! jsonData.write(to: jsonFileURL)
+//        self.updateCarouselElements()
+//    }
     
     /// Check if the file "drinks.json" exist and if it's empty.
     func checkJSONFile() -> Bool {
