@@ -11,6 +11,7 @@ struct BACView: View {
     
     var bacImage: String
     @AppStorage("bacValue") var bacValue : String = "0.000"
+    @State private var showDrankList : Bool = false
 //    @State var bacLevel: String
     var bacDescription: String
     
@@ -24,6 +25,12 @@ struct BACView: View {
                 Text(bacDescription)
             }
             LiverLiquidView()
+                .onTapGesture {
+                    self.showDrankList.toggle()
+                }
+                .sheet(isPresented: $showDrankList, content: {
+                    DrankListView()
+                })
                 .frame(width: 100, height: 100)
             Text("BAC: \(bacValue)(g/ml)")
         }

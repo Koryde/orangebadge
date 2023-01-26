@@ -14,6 +14,7 @@
 		697894AF296ECA6E00EA2455 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697894AE296ECA6E00EA2455 /* ContentView.swift */; };
 		697894B1296ED31D00EA2455 /* BasicDrinksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 697894B0296ED31D00EA2455 /* BasicDrinksView.swift */; };
 		AC2E13B3297FEC8C0056F0A4 /* startingDrinks.json in Resources */ = {isa = PBXBuildFile; fileRef = AC2E13B2297FEC8C0056F0A4 /* startingDrinks.json */; };
+		AC30CC182982733C00C01F1C /* DrankListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC30CC172982733C00C01F1C /* DrankListView.swift */; };
 		ACB0CF152970266400D43940 /* LiverLiquidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB0CF142970266400D43940 /* LiverLiquidView.swift */; };
 		ACBB41FB296EC9ED001C6CC1 /* Drink.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBB41FA296EC9ED001C6CC1 /* Drink.swift */; };
 		ACD1AEA22975415600B49BFF /* Drink+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1AEA12975415600B49BFF /* Drink+ViewModel.swift */; };
@@ -31,6 +32,7 @@
 		697894AE296ECA6E00EA2455 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		697894B0296ED31D00EA2455 /* BasicDrinksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicDrinksView.swift; sourceTree = "<group>"; };
 		AC2E13B2297FEC8C0056F0A4 /* startingDrinks.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = startingDrinks.json; sourceTree = "<group>"; };
+		AC30CC172982733C00C01F1C /* DrankListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrankListView.swift; sourceTree = "<group>"; };
 		ACB0CF142970266400D43940 /* LiverLiquidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiverLiquidView.swift; sourceTree = "<group>"; };
 		ACBB41FA296EC9ED001C6CC1 /* Drink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drink.swift; sourceTree = "<group>"; };
 		ACD1AEA12975415600B49BFF /* Drink+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Drink+ViewModel.swift"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				ACB0CF142970266400D43940 /* LiverLiquidView.swift */,
 				EFB0F62D29799905002F6774 /* AccountView.swift */,
 				AC2E13B2297FEC8C0056F0A4 /* startingDrinks.json */,
+				AC30CC172982733C00C01F1C /* DrankListView.swift */,
 			);
 			path = ContentView;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				697894B1296ED31D00EA2455 /* BasicDrinksView.swift in Sources */,
+				AC30CC182982733C00C01F1C /* DrankListView.swift in Sources */,
 				ACBB41FB296EC9ED001C6CC1 /* Drink.swift in Sources */,
 				43E32C3B296ED9E800F1A653 /* Carousel.swift in Sources */,
 				43BDD875297548730084FC41 /* DrinksListView.swift in Sources */,
@@ -362,9 +366,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = bac2.OITNB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -391,9 +398,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = bac2.OITNB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

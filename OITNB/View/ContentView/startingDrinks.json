@@ -5,7 +5,8 @@
         "alcoholByVolume": 12,
         "name": "Mimosa",
         "category": "Medium Drinks",
-        "milliliters": 150
+        "milliliters": 150,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -13,7 +14,8 @@
         "alcoholByVolume": 11,
         "name": "Aperol Spritz",
         "category": "Medium Drinks",
-        "milliliters": 150
+        "milliliters": 150,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -21,7 +23,8 @@
         "alcoholByVolume": 12,
         "name": "Moscow Mule",
         "category": "Medium Drinks",
-        "milliliters": 175
+        "milliliters": 175,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -29,7 +32,8 @@
         "alcoholByVolume": 17,
         "name": "Pina Colada",
         "category": "Medium Drinks",
-        "milliliters": 130
+        "milliliters": 130,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -37,7 +41,8 @@
         "alcoholByVolume": 17,
         "name": "Gin Tonic",
         "category": "Medium Drinks",
-        "milliliters": 140
+        "milliliters": 140,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -45,7 +50,8 @@
         "alcoholByVolume": 18,
         "name": "Mojito",
         "category": "Medium Drinks",
-        "milliliters": 180
+        "milliliters": 180,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -53,7 +59,8 @@
         "alcoholByVolume": 16,
         "name": "Classic Sangria",
         "category": "Medium Drinks",
-        "milliliters": 180
+        "milliliters": 180,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -61,7 +68,8 @@
         "alcoholByVolume": 29,
         "name": "Negroni",
         "category": "Short Drinks",
-        "milliliters": 90
+        "milliliters": 90,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -69,7 +77,8 @@
         "alcoholByVolume": 35,
         "name": "Angelo Azzurro",
         "category": "Short Drinks",
-        "milliliters": 110
+        "milliliters": 110,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -77,7 +86,8 @@
         "alcoholByVolume": 30,
         "name": "Manhattan",
         "category": "Short Drinks",
-        "milliliters": 70
+        "milliliters": 70,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -85,7 +95,8 @@
         "alcoholByVolume": 29.800000000000001,
         "name": "Dry Martini",
         "category": "Short Drinks",
-        "milliliters": 70
+        "milliliters": 70,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -93,7 +104,8 @@
         "alcoholByVolume": 30,
         "name": "Godfather",
         "category": "Short Drinks",
-        "milliliters": 70
+        "milliliters": 70,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -101,7 +113,8 @@
         "alcoholByVolume": 36,
         "name": "Caipirinha",
         "category": "Short Drinks",
-        "milliliters": 60
+        "milliliters": 60,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -109,7 +122,8 @@
         "alcoholByVolume": 25.399999999999999,
         "name": "Margarita",
         "category": "Short Drinks",
-        "milliliters": 85
+        "milliliters": 85,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -117,7 +131,8 @@
         "alcoholByVolume": 13.300000000000001,
         "name": "Whiskey Sour",
         "category": "Short Drinks",
-        "milliliters": 90
+        "milliliters": 90,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -125,7 +140,8 @@
         "alcoholByVolume": 12,
         "name": "Cuba Libre",
         "category": "Long Drinks",
-        "milliliters": 180
+        "milliliters": 180,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -133,7 +149,8 @@
         "alcoholByVolume": 17,
         "name": "Daiquiri",
         "category": "Long Drinks",
-        "milliliters": 80
+        "milliliters": 80,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -141,7 +158,8 @@
         "alcoholByVolume": 7.5,
         "name": "Small Beer",
         "category": "Beers",
-        "milliliters": 25
+        "milliliters": 25,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -149,7 +167,8 @@
         "alcoholByVolume": 7.5,
         "name": "Big Beer",
         "category": "Beers",
-        "milliliters": 50
+        "milliliters": 50,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -157,7 +176,8 @@
         "alcoholByVolume": 13.5,
         "name": "Red Wine",
         "category": "Wines",
-        "milliliters": 200
+        "milliliters": 200,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -165,7 +185,8 @@
         "alcoholByVolume": 13.5,
         "name": "White Wine",
         "category": "Wines",
-        "milliliters": 150
+        "milliliters": 150,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -173,7 +194,8 @@
         "alcoholByVolume": 12,
         "name": "Rosé Wine",
         "category": "Wines",
-        "milliliters": 200
+        "milliliters": 200,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -181,7 +203,8 @@
         "alcoholByVolume": 40,
         "name": "Tequila",
         "category": "Shots",
-        "milliliters": 30
+        "milliliters": 30,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -189,7 +212,8 @@
         "alcoholByVolume": 35,
         "name": "Jägermeister",
         "category": "Shots",
-        "milliliters": 30
+        "milliliters": 30,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -197,7 +221,8 @@
         "alcoholByVolume": 33.299999999999997,
         "name": "Fireball Cinnamon Whiskey",
         "category": "Shots",
-        "milliliters": 30
+        "milliliters": 30,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -205,7 +230,8 @@
         "alcoholByVolume": 38,
         "name": "Sambuca",
         "category": "Shots",
-        "milliliters": 30
+        "milliliters": 30,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -213,7 +239,8 @@
         "alcoholByVolume": 65,
         "name": "Asbinthe",
         "category": "Shots",
-        "milliliters": 30
+        "milliliters": 30,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -221,7 +248,8 @@
         "alcoholByVolume": 40,
         "name": "Goldschlager",
         "category": "Shots",
-        "milliliters": 30
+        "milliliters": 30,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -229,7 +257,8 @@
         "alcoholByVolume": 75.5,
         "name": "Bacardi 151",
         "category": "Shots",
-        "milliliters": 15
+        "milliliters": 15,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -237,7 +266,8 @@
         "alcoholByVolume": 50,
         "name": "Rakia",
         "category": "Shots",
-        "milliliters": 30
+        "milliliters": 30,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -245,7 +275,8 @@
         "alcoholByVolume": 40,
         "name": "Smooth Vodka",
         "category": "Shots",
-        "milliliters": 30
+        "milliliters": 30,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -253,7 +284,8 @@
         "alcoholByVolume": 40,
         "name": "Whiskey",
         "category": "Shots",
-        "milliliters": 30
+        "milliliters": 30,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -261,7 +293,8 @@
         "alcoholByVolume": 40,
         "name": "Rum",
         "category": "Shots",
-        "milliliters": 30
+        "milliliters": 30,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -269,7 +302,8 @@
         "alcoholByVolume": 27.5,
         "name": "B-52",
         "category": "Shots",
-        "milliliters": 30
+        "milliliters": 30,
+        "drinkCounter": 0
     },
     {
         "isFavorite": false,
@@ -277,7 +311,8 @@
         "alcoholByVolume": 70,
         "name": "Latte di Suocera",
         "category": "Shots",
-        "milliliters": 30
+        "milliliters": 30,
+        "drinkCounter": 0
     }
 ]
  

@@ -22,6 +22,9 @@ struct OITNBApp: App {
                 OnBoardingView()
             } else {
                 ContentView().environmentObject(drinkViewModel)
+                    .onAppear {
+                        drinkViewModel.resetAllDrinkCounters()
+                    }
                     .task {
                         if !drinkViewModel.checkJSONFile() {
                             drinkViewModel.decodeLocalJSON()

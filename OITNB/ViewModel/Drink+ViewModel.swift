@@ -12,6 +12,8 @@ class DrinkViewModel : ObservableObject {
     
     // MARK: List of Drinks
     @Published var carouselElements: [CarouselElement] = []
+    
+    @Published var drankArray : [Drink] = []
 
     init() {
         for _ in readDrinks() {
@@ -48,6 +50,8 @@ class DrinkViewModel : ObservableObject {
         // Check if the BAC value is 0.0, if not, add the actual BAC value with the new one.
         if bacValue != "0.000" {
             return bloodAlcoholConcentration + Double(bacValue)!
+        } else if drink.drinkCounter != 0 {
+            return Double(bacValue)! - bloodAlcoholConcentration
         } else {
             return bloodAlcoholConcentration
         }
@@ -56,6 +60,35 @@ class DrinkViewModel : ObservableObject {
     func updateCarouselElements() {
             carouselElements = readDrinks().filter { $0.isFavorite }.map { CarouselElement(drink: $0) }
         }
+    
+    func addDrinkToDrank(drink: Drink) {
+        increaseDrinkCounter(drink: drink)
+        self.drankArray.append(drink)
+        print(drankArray)
+    }
+    
+    func removeDrinkFromDrank(drink: Drink) {
+        if let index = drankArray.firstIndex(where: { $0.id == drink.id }) {
+            drankArray.remove(at: index)
+        }
+    }
+    
+    func resetDrinkCounter(drink: Drink) {
+        var drinks = readDrinks()
+        if let index = drinks.firstIndex(where: { $0.id == drink.id }) {
+            drinks[index].drinkCounter = 0
+        }
+    }
+    
+    func resetAllDrinkCounters() {
+        let drinks = readDrinks()
+        for drink in drinks {
+            resetDrinkCounter(drink: drink)
+        }
+        let jsonData = try! jsonEncoder.encode(drinks)
+        try! jsonData.write(to: jsonFileURL)
+        print("Resettati")
+    }
     
     
     // MARK: API Request
@@ -200,6 +233,27 @@ class DrinkViewModel : ObservableObject {
         var drinks = readDrinks()
         if let index = drinks.firstIndex(where: { $0.id == drink.id }) {
             drinks[index].isFavorite.toggle()
+        }
+        let jsonData = try! jsonEncoder.encode(drinks)
+        try! jsonData.write(to: jsonFileURL)
+        self.updateCarouselElements()
+    }
+    
+    /// Update the Drink Counter
+    func increaseDrinkCounter(drink: Drink) {
+        var drinks = readDrinks()
+        if let index = drinks.firstIndex(where: { $0.id == drink.id }) {
+            drinks[index].drinkCounter += 1
+        }
+        let jsonData = try! jsonEncoder.encode(drinks)
+        try! jsonData.write(to: jsonFileURL)
+        self.updateCarouselElements()
+    }
+    
+    func decreaseDrinkCounter(drink: Drink) {
+        var drinks = readDrinks()
+        if let index = drinks.firstIndex(where: { $0.id == drink.id }) {
+            drinks[index].drinkCounter -= 1
         }
         let jsonData = try! jsonEncoder.encode(drinks)
         try! jsonData.write(to: jsonFileURL)
