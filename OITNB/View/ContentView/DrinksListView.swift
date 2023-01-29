@@ -86,7 +86,6 @@ struct DrinksListItem: View {
             Image(systemName: drink.isFavorite ? "star.fill" : "star")
                 .foregroundColor(Color("MainColor"))
                 .onTapGesture {
-//                    vm.addToFavorite(drink: drink)
                     vm.addOrRemoveFavorite(drink: drink)
                 }
         }

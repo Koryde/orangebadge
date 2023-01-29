@@ -29,7 +29,6 @@ struct DrankListView: View {
                                 }
                             } label: {
                                 Image(systemName: "trash")
-//                                Text("Delete")
                             }.tint(.red)
                             
                         }
@@ -59,22 +58,8 @@ struct DrankRowView: View {
                 }
             }
             Spacer()
-            
-//            Stepper("\(drink.drinkCounter)", onIncrement: {
-//                vm.increaseDrinkCounter(drink: drink)
-//            }, onDecrement: {
-//                if drink.drinkCounter > 0 {
-//                    vm.decreaseDrinkCounter(drink: drink)
-//                }
-//            })
         }
         .padding(.horizontal)
-//        .onChange(of: drink.drinkCounter) { _ in
-//            counter = drink.drinkCounter}
-//        .onAppear {
-//            counter = drink.drinkCounter
-//        }
-        
     }
 }
 

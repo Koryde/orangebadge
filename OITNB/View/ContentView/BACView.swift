@@ -12,7 +12,6 @@ struct BACView: View {
     var bacImage: String
     @AppStorage("bacValue") var bacValue : String = "0.000"
     @State private var showDrankList : Bool = false
-//    @State var bacLevel: String
     var bacDescription: String
     
     var body: some View {

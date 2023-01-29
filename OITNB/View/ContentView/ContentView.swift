@@ -50,7 +50,6 @@ struct ContentView: View {
             }
             
         }
-//        .preferredColorScheme(.dark)
         .onAppear{
             bacValue = "0.000"
         }

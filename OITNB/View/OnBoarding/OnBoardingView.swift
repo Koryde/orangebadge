@@ -35,12 +35,8 @@ struct OnBoardingView: View {
                 }.padding()
                 colorScheme == .light ?
                 Image("OnBoarding")
-//                    .resizable()
-//                    .frame(width: 200,height: 200)
                     .padding()
                 : Image ("OnBoardingBlack")
-//                    .resizable()
-//                    .frame(width: 200,height: 200)
                     .padding()
                 HStack{
                     Text("Select your gender")

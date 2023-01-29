@@ -38,10 +38,6 @@ struct Carousel: View {
                     withAnimation { self.offset = -(CGFloat(self.index) * self.pageWidth) }
                 }
         )
-//        .onReceive(vm.$carouselElements) { _ in
-//            print("on receive")
-//            carouselElements = vm.carouselElements
-//        }
     }
     
     // this allows the snapping of the element in the middle of the screen
