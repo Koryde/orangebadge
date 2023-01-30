@@ -35,7 +35,6 @@ struct DrinksListView: View {
                         HStack {
                             Image(systemName: "plus.circle.fill")
                             Text("Add drink")
-//                            Spacer()
                         }
                         .foregroundColor(Color("MainColor"))
                     })
@@ -45,8 +44,7 @@ struct DrinksListView: View {
         }
     }
     func filterTags() -> some View {
-        return
-        ScrollView(.horizontal, showsIndicators: false) {
+        return ScrollView(.horizontal, showsIndicators: false) {
             HStack {
                 ForEach(Category.allCases, id: \.self) { category in
                     Button(action: {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var vm: DrinkViewModel
     @AppStorage("bacValue") var bacValue : String = "0.000"
     
@@ -30,7 +30,13 @@ struct ContentView: View {
                                 .foregroundColor(Color("MainColor"))
                         })
                     }
-                    Carousel(pageWidth: geo.size.width/2)
+                    if vm.carouselElements.isEmpty {
+                        NavigationLink(destination: {DrinksListView()}, label: {
+                            emptyFavoritesView
+                        })
+                    } else {
+                        Carousel(pageWidth: geo.size.width/2)
+                    }
                 }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing, content: {
@@ -52,6 +58,21 @@ struct ContentView: View {
         }
         .onAppear{
             bacValue = "0.000"
+        }
+    }
+    /// The view that shows when the favorites carousel is empty
+    private var emptyFavoritesView: some View {
+        return ZStack {
+            Circle()
+                .foregroundColor(Color("MainColor"))
+            VStack {
+                Text("Add your\nfavorites drinks")
+                    .padding()
+                Image(systemName: "plus")
+                    .bold()
+                    .font(.system(size: 30))
+            }
+            .foregroundColor(colorScheme == .dark ? Color.black : Color.white)
         }
     }
 }
