@@ -16,7 +16,7 @@ struct ContentView: View {
         NavigationStack {
             GeometryReader { geo in
                 VStack(spacing: 50) {
-                    BACView(bacImage: "exclamationmark.triangle.fill", bacDescription: "Warning!")
+                    BACView()
                     BasicDrinksView()
                     HStack {
                         Text("My Drinks")
