@@ -10,7 +10,21 @@ import SwiftUI
 
 class DrinkViewModel : ObservableObject {
     
+    // MARK: Constant/Var for Encode/Decode the JSON
+    private let fileManager = FileManager.default
+    private let jsonDecoder = JSONDecoder()
+    private let jsonEncoder = JSONEncoder()
+    private var jsonFileURL: URL {
+        let documentDirectory = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        return documentDirectory.appendingPathComponent("drinks.json")
+    }
+    private var startingJsonURL : URL {
+        let documentDirectory = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        return documentDirectory.appendingPathComponent("startingDrinks.json")
+    }
+    
     // MARK: List of Drinks
+
     @Published var carouselElements: [CarouselElement] = []
     
     @Published var drankArray : [Drink] = []
@@ -22,6 +36,7 @@ class DrinkViewModel : ObservableObject {
     }
    
     // MARK: Functions
+    /// Calculate the Blood Alcohol Concentration based on the user info.
     func calculateBac(drink: Drink, myWeight: Double, myGender: String, haveEat: Bool, bacValue: String, drankListOpen: Bool) -> Double {
         // Calculate the grams of alcohol in a drink
         let gramsOfAlcohol = ((drink.alcoholByVolume * 0.8) * (drink.milliliters / 100))
@@ -62,12 +77,13 @@ class DrinkViewModel : ObservableObject {
             carouselElements = readDrinks().filter { $0.isFavorite }.map { CarouselElement(drink: $0) }
         }
     
+    /// When you drink a Drink, add it to this list so you can see what you drank clicking on the liver.
     func addDrinkToDrank(drink: Drink) {
-//        increaseDrinkCounter(drink: drink)
         self.drankArray.append(drink)
         print(drankArray)
     }
     
+    /// Remove a Drink from the Drank List.
     func removeDrinkFromDrank(drink: Drink) {
         if let index = drankArray.firstIndex(where: { $0.id == drink.id }) {
             drankArray.remove(at: index)
@@ -77,6 +93,7 @@ class DrinkViewModel : ObservableObject {
     
     // MARK: API Request
 
+    /// Retrieve the drinks from the API
     func getDrink() async  {
 
         let url = URL(string: "http://127.0.0.1:8080/drinksJson")!
@@ -107,8 +124,9 @@ class DrinkViewModel : ObservableObject {
         }.resume()
     }
     
-    // MARK: Decode Local JSon
+    // MARK: JSON Function
     
+    /// Retrieve the drinks from a local JSON file.
     func decodeLocalJSON() {
         if let path = Bundle.main.path(forResource: "startingDrinks", ofType: "json") {
             do {
@@ -130,22 +148,27 @@ class DrinkViewModel : ObservableObject {
             }
         }
     }
+    
+    /// Check if the file "drinks.json" exist and if it's empty.
+    func checkJSONFile() -> Bool {
+        let fileManager = FileManager.default
+        let documentDirectory = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        let jsonFileURL = documentDirectory.appendingPathComponent("drinks.json")
+        // check if file exist
+        if !fileManager.fileExists(atPath: jsonFileURL.path) {
+            return false
+        }
+        // check if file is empty
+        if let fileSize = try? fileManager.attributesOfItem(atPath: jsonFileURL.path)[.size], fileSize as? Int == 0 {
+            return false
+        }
+        return true
+    }
 
-    
-    // MARK: CRUD Operation for Drink
-    
-    
-    private let fileManager = FileManager.default
-    private let jsonDecoder = JSONDecoder()
-    private let jsonEncoder = JSONEncoder()
-    private var jsonFileURL: URL {
-        let documentDirectory = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        return documentDirectory.appendingPathComponent("drinks.json")
-    }
-    private var startingJsonURL : URL {
-        let documentDirectory = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        return documentDirectory.appendingPathComponent("startingDrinks.json")
-    }
+}
+
+// MARK: Drink Operation
+extension DrinkViewModel {
     
     /// Add a Drink to the JSON file.
     func appendDrinkToJSON(drink: Drink) {
@@ -178,7 +201,7 @@ class DrinkViewModel : ObservableObject {
         // Write the updated JSON data to the file
         try! updatedJSONData.write(to: jsonFileURL)
     }
-
+    
     /// Create a Drink.
     func createDrink(drink: Drink) {
         appendDrinkToJSON(drink: drink)
@@ -222,43 +245,4 @@ class DrinkViewModel : ObservableObject {
         try! jsonData.write(to: jsonFileURL)
         self.updateCarouselElements()
     }
-    
-    /// Update the Drink Counter
-//    func increaseDrinkCounter(drink: Drink) {
-//        var drinks = readDrinks()
-//        if let index = drinks.firstIndex(where: { $0.id == drink.id }) {
-//            drinks[index].drinkCounter += 1
-//        }
-//        let jsonData = try! jsonEncoder.encode(drinks)
-//        try! jsonData.write(to: jsonFileURL)
-//        self.updateCarouselElements()
-//    }
-    
-//    func decreaseDrinkCounter(drink: Drink) {
-//        var drinks = readDrinks()
-//        if let index = drinks.firstIndex(where: { $0.id == drink.id }) {
-//            drinks[index].drinkCounter -= 1
-//        }
-//        let jsonData = try! jsonEncoder.encode(drinks)
-//        try! jsonData.write(to: jsonFileURL)
-//        self.updateCarouselElements()
-//    }
-    
-    /// Check if the file "drinks.json" exist and if it's empty.
-    func checkJSONFile() -> Bool {
-        let fileManager = FileManager.default
-        let documentDirectory = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
-        let jsonFileURL = documentDirectory.appendingPathComponent("drinks.json")
-        // check if file exist
-        if !fileManager.fileExists(atPath: jsonFileURL.path) {
-            return false
-        }
-        // check if file is empty
-        if let fileSize = try? fileManager.attributesOfItem(atPath: jsonFileURL.path)[.size], fileSize as? Int == 0 {
-            return false
-        }
-        return true
-    }
-    
-    
 }
