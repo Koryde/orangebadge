@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DrinksListView: View {
     
-    @EnvironmentObject var vm: DrinkViewModel
+    @EnvironmentObject var drinkViewModel: DrinkViewModel
     @State var searchText = ""
     @State var selectedCategories = Set<Category>()
     @State var presentAddDrinkView = false
@@ -18,7 +18,7 @@ struct DrinksListView: View {
         NavigationStack {
             filterTags()
             List {
-                ForEach(vm.readDrinks().filter { drink in
+                ForEach(drinkViewModel.readDrinks().filter { drink in
                     let search = searchText.isEmpty || drink.name.lowercased().contains(searchText.lowercased())
                     let filtered = selectedCategories.isEmpty || selectedCategories.contains(drink.category)
                     return search && filtered
@@ -70,7 +70,7 @@ struct DrinksListView: View {
 
 struct DrinksListItem: View {
     
-    @EnvironmentObject var vm: DrinkViewModel
+    @EnvironmentObject var drinkViewModel: DrinkViewModel
     var drink: Drink
     
     var body: some View {
@@ -88,7 +88,7 @@ struct DrinksListItem: View {
             Image(systemName: drink.isFavorite ? "star.fill" : "star")
                 .foregroundColor(Color("MainColor"))
                 .onTapGesture {
-                    vm.addOrRemoveFavorite(drink: drink)
+                    drinkViewModel.addOrRemoveFavorite(drink: drink)
                 }
         }
     }

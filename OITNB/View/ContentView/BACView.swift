@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BACView: View {
     
-    @AppStorage("bacValue") var bacValue : String = "0.000"
+    @EnvironmentObject var drinkViewModel : DrinkViewModel
     @State private var showDrankList: Bool = false
     
     var body: some View {
@@ -23,12 +23,12 @@ struct BACView: View {
                     DrankListView()
                 })
                 .frame(width: 100, height: 100)
-            Text("BAC: \(bacValue)(g/ml)")
+            Text("BAC: \(drinkViewModel.bacValue)(g/ml)")
         }
     }
     
     private var changingBacHeader: some View {
-        let floatBac = Float(bacValue)
+        let floatBac = Float(drinkViewModel.bacValue)
         return Group {
             if floatBac! < 0.500 {
                 HStack {

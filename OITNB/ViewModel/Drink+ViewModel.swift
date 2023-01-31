@@ -10,6 +10,12 @@ import SwiftUI
 
 class DrinkViewModel : ObservableObject {
     
+    // MARK: AppStorage Variable
+    @AppStorage("myGender") var myGender : String = ""
+    @AppStorage("myWeight") var myWeight : Double = 0.0
+    @AppStorage("bacValue") var bacValue : String = "0.000"
+    @AppStorage("haveEat") var haveEat : Bool = false
+    
     // MARK: Constant/Var for Encode/Decode the JSON
     private let fileManager = FileManager.default
     private let jsonDecoder = JSONDecoder()

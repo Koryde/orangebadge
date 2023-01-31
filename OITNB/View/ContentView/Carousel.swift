@@ -9,15 +9,15 @@ import SwiftUI
 
 struct Carousel: View {
     let pageWidth: CGFloat
-    @EnvironmentObject var vm: DrinkViewModel
+    @EnvironmentObject var drinkViewModel: DrinkViewModel
     @State private var offset: CGFloat = 0
     @State private var index = 0
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(alignment: .center, spacing: 1) {
-                ForEach(vm.carouselElements.indices, id: \.self) { index in
-                    self.vm.carouselElements[index]
+                ForEach(drinkViewModel.carouselElements.indices, id: \.self) { index in
+                    self.drinkViewModel.carouselElements[index]
                         .frame(width: self.pageWidth, height: nil)
                 }
             }
@@ -46,9 +46,9 @@ struct Carousel: View {
         // this allows going back to first item when last is reached
         let newIndex: Int
         if translation > -snapDistance {
-            newIndex = currentIndex + 1 >= vm.carouselElements.count ? 0 : currentIndex + 1
+            newIndex = currentIndex + 1 >= drinkViewModel.carouselElements.count ? 0 : currentIndex + 1
         } else if translation < snapDistance {
-            newIndex = currentIndex - 1 < 0 ? vm.carouselElements.count - 1 : currentIndex - 1
+            newIndex = currentIndex - 1 < 0 ? drinkViewModel.carouselElements.count - 1 : currentIndex - 1
         } else {
             newIndex = currentIndex
         }
@@ -60,15 +60,12 @@ struct CarouselElement: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var drinkViewModel : DrinkViewModel
     
-    @AppStorage("bacValue") var bacValue : String = "0.000"
-    @AppStorage("myGender") var myGender : String = ""
-    @AppStorage("myWeight") var myWeight : Double = 0.0
     
     var drink: Drink
     
     var body: some View {
         Button(action: {
-            bacValue = String(String(drinkViewModel.calculateBac(drink: drink, myWeight: myWeight, myGender: myGender, haveEat: true, bacValue: bacValue, drankListOpen: false)).prefix(5))
+            drinkViewModel.bacValue = String(String(drinkViewModel.calculateBac(drink: drink, myWeight: drinkViewModel.myWeight, myGender: drinkViewModel.myGender, haveEat: drinkViewModel.haveEat, bacValue: drinkViewModel.bacValue, drankListOpen: false)).prefix(5))
             drinkViewModel.addDrinkToDrank(drink: drink)
         }, label: {
             ZStack {

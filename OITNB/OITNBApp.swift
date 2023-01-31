@@ -11,15 +11,16 @@ import SwiftUI
 struct OITNBApp: App {
     
     @AppStorage ("needsAppOnBoarding") private var needsAppOnBoarding: Bool = true
-    @StateObject var drinkViewModel = DrinkViewModel()
+//    @StateObject var drinkViewModel = DrinkViewModel()
 
     var body: some Scene {
         
         
         
         WindowGroup {
+            let drinkViewModel = DrinkViewModel()
             if needsAppOnBoarding{
-                OnBoardingView()
+                OnBoardingView().environmentObject(drinkViewModel)
             } else {
                 ContentView().environmentObject(drinkViewModel)
                     .task {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LiverLiquidView: View {
     
-    @AppStorage("bacValue") var bacValue : String = "0.000"
+    @EnvironmentObject var drinkViewModel : DrinkViewModel
     @State var progress : CGFloat = 0.0
     @State var startAnimation : CGFloat = 0
     
@@ -27,8 +27,8 @@ struct LiverLiquidView: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     
-                            }.onChange(of: bacValue, perform: { value in
-                                progress = CGFloat(Float(Float(bacValue)!/10)*2)
+                            }.onChange(of: drinkViewModel.bacValue, perform: { value in
+                                progress = CGFloat(Float(Float(drinkViewModel.bacValue)!/10)*2)
                             })
                         Image("liver")
                             .resizable()

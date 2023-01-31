@@ -8,24 +8,21 @@
 import SwiftUI
 
 struct DrankListView: View {
-    @EnvironmentObject var vm: DrinkViewModel
-    @AppStorage("myGender") var myGender : String = ""
-    @AppStorage("myWeight") var myWeight : Double = 0.0
-    @AppStorage("bacValue") var bacValue : String = "0.000"
+    @EnvironmentObject var drinkViewModel: DrinkViewModel
 
     var body: some View {
         NavigationStack {
             List {
-                ForEach(vm.drankArray){
+                ForEach(drinkViewModel.drankArray){
                     drink in
                     DrankRowView(drink: drink)
                         .swipeActions(allowsFullSwipe: false) {
                             Button {
-                                vm.removeDrinkFromDrank(drink: drink)
-                                if vm.drankArray.isEmpty {
-                                    bacValue = "0.000"
+                                drinkViewModel.removeDrinkFromDrank(drink: drink)
+                                if drinkViewModel.drankArray.isEmpty {
+                                    drinkViewModel.bacValue = "0.000"
                                 } else {
-                                    bacValue = String(vm.calculateBac(drink: drink, myWeight: myWeight, myGender: myGender, haveEat: false, bacValue: bacValue, drankListOpen: true))
+                                    drinkViewModel.bacValue = String(drinkViewModel.calculateBac(drink: drink, myWeight: drinkViewModel.myWeight, myGender: drinkViewModel.myGender, haveEat: drinkViewModel.haveEat, bacValue: drinkViewModel.bacValue, drankListOpen: true))
                                 }
                             } label: {
                                 Image(systemName: "trash")
@@ -42,7 +39,7 @@ struct DrankListView: View {
 
 struct DrankRowView: View {
     
-    @EnvironmentObject var vm: DrinkViewModel
+    @EnvironmentObject var drinkViewModel: DrinkViewModel
     var drink: Drink
     @State private var counter = 0
     

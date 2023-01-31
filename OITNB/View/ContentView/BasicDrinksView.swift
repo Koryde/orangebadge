@@ -43,15 +43,12 @@ struct BasicDrinkButton: View {
     @Environment(\.colorScheme) var colorScheme
     
     @EnvironmentObject var drinkViewModel : DrinkViewModel
-    @AppStorage("bacValue") var bacValue : String = "0.000"
-    @AppStorage("myGender") var myGender : String = ""
-    @AppStorage("myWeight") var myWeight : Double = 0.0
     
     var drink : Drink
     
     var body: some View {
         Button(action: {
-            bacValue = String(String(drinkViewModel.calculateBac(drink: drink, myWeight: myWeight, myGender: myGender, haveEat: true, bacValue: bacValue, drankListOpen: false)).prefix(5))
+            drinkViewModel.bacValue = String(String(drinkViewModel.calculateBac(drink: drink, myWeight: drinkViewModel.myWeight, myGender: drinkViewModel.myGender, haveEat: drinkViewModel.haveEat, bacValue: drinkViewModel.bacValue, drankListOpen: false)).prefix(5))
         }, label: {
             VStack {
                 ZStack {

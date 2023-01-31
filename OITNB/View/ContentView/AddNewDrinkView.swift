@@ -14,7 +14,7 @@ import SwiftUI
 struct AddNewDrinkView: View {
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    @EnvironmentObject var vm: DrinkViewModel
+    @EnvironmentObject var drinkViewModel: DrinkViewModel
     
     @State var drinkName = ""
     @State var category: Category = .shot
@@ -61,7 +61,7 @@ struct AddNewDrinkView: View {
                         ToolbarItem(placement: .navigationBarTrailing, content: {
                             Button(action: {
                                 presentationMode.wrappedValue.dismiss()
-                                vm.createDrink(drink: Drink(category: category, name: drinkName, alcoholByVolume: alcohol, milliliters: milliliters, isFavorite: isFavorite))
+                                drinkViewModel.createDrink(drink: Drink(category: category, name: drinkName, alcoholByVolume: alcohol, milliliters: milliliters, isFavorite: isFavorite))
                             }, label: {
                                 Text("Save")
                             })

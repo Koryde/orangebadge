@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
-    @EnvironmentObject var vm: DrinkViewModel
-    @AppStorage("bacValue") var bacValue : String = "0.000"
+    @EnvironmentObject var drinkViewModel : DrinkViewModel
     
     var body: some View {
         NavigationStack {
@@ -30,7 +29,7 @@ struct ContentView: View {
                                 .foregroundColor(Color("MainColor"))
                         })
                     }
-                    if vm.carouselElements.isEmpty {
+                    if drinkViewModel.carouselElements.isEmpty {
                         NavigationLink(destination: {DrinksListView()}, label: {
                             emptyFavoritesView
                         })
@@ -57,7 +56,7 @@ struct ContentView: View {
             
         }
         .onAppear{
-            bacValue = "0.000"
+            drinkViewModel.bacValue = "0.000"
         }
     }
     /// The view that shows when the favorites carousel is empty
