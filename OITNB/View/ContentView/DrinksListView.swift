@@ -12,6 +12,7 @@ struct DrinksListView: View {
     @EnvironmentObject var vm: DrinkViewModel
     @State var searchText = ""
     @State var selectedCategories = Set<Category>()
+    @State var presentAddDrinkView = false
     
     var body: some View {
         NavigationStack {
@@ -26,11 +27,14 @@ struct DrinksListView: View {
                 }
             }
             .searchable(text: $searchText, prompt: "Search for a drink")
+            .sheet(isPresented: $presentAddDrinkView, content: {
+                AddNewDrinkView()
+            })
             .toolbar {
-                //Button to add new drink
+                //Button to show AddNewDrink modal view
                 ToolbarItemGroup(placement: .bottomBar) {
                     Button(action: {
-                        
+                        presentAddDrinkView.toggle()
                     }, label:  {
                         HStack {
                             Image(systemName: "plus.circle.fill")

@@ -86,7 +86,7 @@ enum Category : String, CaseIterable, Codable {
 }
 
 struct Drink: Codable, Hashable, Identifiable {
-    let id: UUID
+    let id = UUID()
     let category: Category
     let name: String
     let alcoholByVolume: Double

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4317ABC62987CD2A008F8A10 /* AddNewDrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4317ABC52987CD2A008F8A10 /* AddNewDrinkView.swift */; };
 		43BDD875297548730084FC41 /* DrinksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BDD874297548730084FC41 /* DrinksListView.swift */; };
 		43E32C3B296ED9E800F1A653 /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E32C3A296ED9E800F1A653 /* Carousel.swift */; };
 		43E32C3D29700DA400F1A653 /* BACView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E32C3C29700DA400F1A653 /* BACView.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4317ABC52987CD2A008F8A10 /* AddNewDrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewDrinkView.swift; sourceTree = "<group>"; };
 		43BDD874297548730084FC41 /* DrinksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinksListView.swift; sourceTree = "<group>"; };
 		43E32C3A296ED9E800F1A653 /* Carousel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
 		43E32C3C29700DA400F1A653 /* BACView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BACView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			children = (
 				697894AE296ECA6E00EA2455 /* ContentView.swift */,
 				43BDD874297548730084FC41 /* DrinksListView.swift */,
+				4317ABC52987CD2A008F8A10 /* AddNewDrinkView.swift */,
 				43E32C3C29700DA400F1A653 /* BACView.swift */,
 				43E32C3A296ED9E800F1A653 /* Carousel.swift */,
 				697894B0296ED31D00EA2455 /* BasicDrinksView.swift */,
@@ -214,6 +217,7 @@
 				697894B1296ED31D00EA2455 /* BasicDrinksView.swift in Sources */,
 				AC30CC182982733C00C01F1C /* DrankListView.swift in Sources */,
 				ACBB41FB296EC9ED001C6CC1 /* Drink.swift in Sources */,
+				4317ABC62987CD2A008F8A10 /* AddNewDrinkView.swift in Sources */,
 				43E32C3B296ED9E800F1A653 /* Carousel.swift in Sources */,
 				43BDD875297548730084FC41 /* DrinksListView.swift in Sources */,
 				EFB0F62E29799905002F6774 /* AccountView.swift in Sources */,
