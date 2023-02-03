@@ -173,7 +173,7 @@ class DrinkViewModel : ObservableObject {
 
 }
 
-// MARK: Drink Operation
+// MARK: Drink CRUD Operation
 extension DrinkViewModel {
     
     /// Add a Drink to the JSON file.
