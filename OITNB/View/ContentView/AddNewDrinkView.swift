@@ -42,7 +42,7 @@ struct AddNewDrinkView: View {
                 })
                 
                 // Milliliters picker
-                Picker("Alcohol by volume", selection: $milliliters, content: {
+                Picker("Milliliters", selection: $milliliters, content: {
                     ForEach(Array(stride(from: 0.0, to: 100.0, by: 0.5)), id: \.self) { value in
                         Text(String(format: "%.1f", value))
                     }

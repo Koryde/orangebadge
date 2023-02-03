@@ -49,6 +49,8 @@ struct BasicDrinkButton: View {
     var body: some View {
         Button(action: {
             drinkViewModel.bacValue = String(String(drinkViewModel.calculateBac(drink: drink, myWeight: drinkViewModel.myWeight, myGender: drinkViewModel.myGender, haveEat: drinkViewModel.haveEat, bacValue: drinkViewModel.bacValue, drankListOpen: false)).prefix(5))
+            drinkViewModel.addDrinkToDrank(drink: drink)
+            
         }, label: {
             VStack {
                 ZStack {
