@@ -28,7 +28,7 @@ struct OnBoardingView: View {
             VStack {
                 Spacer()
                 HStack {
-                    Text("Welcome to <APP NAME>")
+                    Text("Welcome to Booze Meter")
                         .font(.largeTitle)
                         .fontWeight(.black)
                         .colorInvert()
@@ -82,7 +82,7 @@ struct OnBoardingView: View {
                     drinkViewModel.myWeight = Double(selectedWeight)
                     
                 }, label: {
-                    Text("Get Drunk")
+                    Text("Let's get started! ")
                         .font(.headline)
                         .foregroundColor(Color("InvertText"))
                         .padding(.horizontal, 50)

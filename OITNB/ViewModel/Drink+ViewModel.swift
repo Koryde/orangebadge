@@ -18,10 +18,7 @@ class DrinkViewModel : ObservableObject {
     @AppStorage("myWeight") var myWeight : Double = 0.0
     @AppStorage("bacValue") var bacValue : String = "0.000"
     @AppStorage("haveEat") var haveEat : Bool = false
-    
     @AppStorage("lastDrinkDate") var lastDrinkDate : String = ""
-    
-    
     
     
     // MARK: Constant/Var for Encode/Decode the JSON
@@ -44,6 +41,8 @@ class DrinkViewModel : ObservableObject {
     @Published var allDrinks : [Drink] = []
     
     @Published var drankArray : [Drink] = []
+    
+   
     
     init() {
         for _ in readDrinks() {
@@ -243,13 +242,13 @@ extension DrinkViewModel {
         if  delta <= 6 * 3600 {
             print("Raffaele Cagacazzo")
         } else{
-            resetCountAfterSixHours()
+            resetCount()
         }
         
     }
     
     ///Reset the drinks count
-    func resetCountAfterSixHours() {
+    func resetCount() {
         drankArray = []
         bacValue = "0.000"
         haveEat = false

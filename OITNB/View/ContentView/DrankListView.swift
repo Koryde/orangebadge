@@ -7,11 +7,25 @@
 
 import SwiftUI
 
+
 struct DrankListView: View {
     @EnvironmentObject var drinkViewModel: DrinkViewModel
 
     var body: some View {
+        
         NavigationStack {
+            
+            HStack {
+                Spacer()
+                Text("Remove all the drinks")
+                    .fontWeight(.bold)
+                Button {
+                    drinkViewModel.resetCount()
+                } label: {
+                    Image(systemName: "trash")
+            }.tint(.red)
+            }
+            
             List {
                 ForEach(drinkViewModel.drankArray){
                     drink in
@@ -29,6 +43,7 @@ struct DrankListView: View {
                             }.tint(.red)
                             
                         }
+                    
                 }
             }
             Spacer()
