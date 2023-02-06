@@ -21,15 +21,20 @@ struct OITNBApp: App {
             let drinkViewModel = DrinkViewModel()
             if needsAppOnBoarding{
                 OnBoardingView().environmentObject(drinkViewModel)
+                    .onAppear {
+                        drinkViewModel.allDrinks = drinkViewModel.readDrinks()
+                    }
             } else {
                 ContentView().environmentObject(drinkViewModel)
+                    .onAppear {
+                        drinkViewModel.allDrinks = drinkViewModel.readDrinks()
+                    }
                     .task {
                         if !drinkViewModel.checkJSONFile() {
                             drinkViewModel.decodeLocalJSON()
                         }
                     }
             }
-            
         }
     }
 }

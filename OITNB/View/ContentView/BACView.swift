@@ -11,6 +11,7 @@ struct BACView: View {
     
     @EnvironmentObject var drinkViewModel : DrinkViewModel
     @State private var showDrankList: Bool = false
+    @State private var actualBacLevel : Float = 0
     
     var body: some View {
         VStack {
@@ -23,7 +24,14 @@ struct BACView: View {
                     DrankListView()
                 })
                 .frame(width: 100, height: 100)
-            Text("BAC: \(drinkViewModel.bacValue)(g/ml)")
+            Text("BAC: ") + Text(String(format: "%.3f", actualBacLevel)) + Text(" g/ml")
+        }
+        .onChange(of: drinkViewModel.bacValue) { bac in
+            actualBacLevel = Float(drinkViewModel.bacValue)!
+            print(actualBacLevel)
+        }
+        .onAppear {
+            actualBacLevel = Float(drinkViewModel.bacValue)!
         }
     }
     
