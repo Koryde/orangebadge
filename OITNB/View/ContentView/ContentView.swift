@@ -65,7 +65,7 @@ struct ContentView: View {
             Circle()
                 .foregroundColor(Color("MainColor"))
             VStack {
-                Text("Add your\nfavorites drinks")
+                Text("Add your\nfavorite drinks")
                     .padding()
                 Image(systemName: "plus")
                     .bold()
