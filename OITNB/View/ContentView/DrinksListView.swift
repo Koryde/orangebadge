@@ -18,7 +18,7 @@ struct DrinksListView: View {
         NavigationStack {
             filterTags()
             List {
-                ForEach(drinkViewModel.readDrinks().filter { drink in
+                ForEach(drinkViewModel.allDrinks.filter { drink in
                     let search = searchText.isEmpty || drink.name.lowercased().contains(searchText.lowercased())
                     let filtered = selectedCategories.isEmpty || selectedCategories.contains(drink.category)
                     return search && filtered
@@ -88,6 +88,7 @@ struct DrinksListItem: View {
             Image(systemName: drink.isFavorite ? "star.fill" : "star")
                 .foregroundColor(Color("MainColor"))
                 .onTapGesture {
+                    print(drink.isFavorite)
                     drinkViewModel.addOrRemoveFavorite(drink: drink)
                 }
         }

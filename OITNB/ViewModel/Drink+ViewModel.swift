@@ -33,6 +33,8 @@ class DrinkViewModel : ObservableObject {
 
     @Published var carouselElements: [CarouselElement] = []
     
+    @Published var allDrinks : [Drink] = []
+    
     @Published var drankArray : [Drink] = []
 
     init() {
@@ -170,6 +172,7 @@ class DrinkViewModel : ObservableObject {
         }
         return true
     }
+    
 
 }
 
@@ -243,12 +246,13 @@ extension DrinkViewModel {
     
     /// Add o Remove a Drink from the Favorite List.
     func addOrRemoveFavorite(drink: Drink) {
-        var drinks = readDrinks()
-        if let index = drinks.firstIndex(where: { $0.id == drink.id }) {
-            drinks[index].isFavorite.toggle()
+        print("Ci sono bro")
+        if let index = allDrinks.firstIndex(where: { $0.id == drink.id }) {
+            allDrinks[index].isFavorite.toggle()
         }
-        let jsonData = try! jsonEncoder.encode(drinks)
+        let jsonData = try! jsonEncoder.encode(allDrinks)
         try! jsonData.write(to: jsonFileURL)
         self.updateCarouselElements()
+        allDrinks = readDrinks()
     }
 }
