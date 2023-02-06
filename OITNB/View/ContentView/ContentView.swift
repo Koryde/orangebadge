@@ -39,18 +39,17 @@ struct ContentView: View {
                 }
                 .alert("Have you eaten in the last two hours?", isPresented: $drinkViewModel.haveEatToggle) {
                     Button {
-                        drinkViewModel.haveEat = true
-                        drinkViewModel.canCalculateBac = true
-                        drinkViewModel.haveEatToggle.toggle()
-                    } label: {
-                        Text("Yes")
-                    }
-                    Button {
                         drinkViewModel.haveEat = false
-                        drinkViewModel.canCalculateBac = true
                         drinkViewModel.haveEatToggle.toggle()
                     } label: {
                         Text("No")
+                    }
+                    Button {
+                        drinkViewModel.haveEat = true
+                        drinkViewModel.haveEatToggle.toggle()
+                    } label: {
+                        Text("Yes")
+                            .fontWeight(.bold)
                     }
                         }
                 .toolbar {
@@ -72,7 +71,9 @@ struct ContentView: View {
             
         }
         .onAppear{
-           drinkViewModel.bacValue = "0.000"
+            if drinkViewModel.bacValue == "0.000" {
+                drinkViewModel.haveEatToggle.toggle()
+            }
         }
     }
     /// The view that shows when the favorites carousel is empty
