@@ -72,7 +72,7 @@ struct ContentView: View {
             
         }
         .onAppear{
-            drinkViewModel.bacValue = "0.000"
+           drinkViewModel.bacValue = "0.000"
         }
     }
     /// The view that shows when the favorites carousel is empty

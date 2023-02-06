@@ -61,7 +61,10 @@ struct BasicDrinkButton: View {
                     drinkViewModel.bacValue = String(String(drinkViewModel.calculateBac(drink: drink, myWeight: drinkViewModel.myWeight, myGender: drinkViewModel.myGender, haveEat: drinkViewModel.haveEat, bacValue: drinkViewModel.bacValue, drankListOpen: false)).prefix(5))
                     drinkViewModel.addDrinkToDrank(drink: drink)
                 }
-            
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyyy HH:mm"
+            drinkViewModel.lastDrinkDate = formatter.string(from: Date())
+            print (drinkViewModel.lastDrinkDate)
         }, label: {
             VStack {
                 ZStack {

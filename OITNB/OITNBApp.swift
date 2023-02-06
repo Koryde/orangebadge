@@ -28,6 +28,7 @@ struct OITNBApp: App {
                 ContentView().environmentObject(drinkViewModel)
                     .onAppear {
                         drinkViewModel.allDrinks = drinkViewModel.readDrinks()
+                        print(drinkViewModel.lastDrinkDate)
                     }
                     .task {
                         if !drinkViewModel.checkJSONFile() {

@@ -19,6 +19,11 @@ class DrinkViewModel : ObservableObject {
     @AppStorage("bacValue") var bacValue : String = "0.000"
     @AppStorage("haveEat") var haveEat : Bool = false
     
+    @AppStorage("lastDrinkDate") var lastDrinkDate : String = ""
+    
+    
+    
+    
     // MARK: Constant/Var for Encode/Decode the JSON
     private let fileManager = FileManager.default
     private let jsonDecoder = JSONDecoder()
@@ -33,19 +38,19 @@ class DrinkViewModel : ObservableObject {
     }
     
     // MARK: List of Drinks
-
+    
     @Published var carouselElements: [CarouselElement] = []
     
     @Published var allDrinks : [Drink] = []
     
     @Published var drankArray : [Drink] = []
-
+    
     init() {
         for _ in readDrinks() {
             carouselElements = readDrinks().filter { $0.isFavorite }.map { CarouselElement(drink: $0) }
         }
     }
-   
+    
     // MARK: Functions
     /// Calculate the Blood Alcohol Concentration based on the user info.
     func calculateBac(drink: Drink, myWeight: Double, myGender: String, haveEat: Bool, bacValue: String, drankListOpen: Bool) -> Double {
@@ -85,8 +90,8 @@ class DrinkViewModel : ObservableObject {
     }
     
     func updateCarouselElements() {
-            carouselElements = readDrinks().filter { $0.isFavorite }.map { CarouselElement(drink: $0) }
-        }
+        carouselElements = readDrinks().filter { $0.isFavorite }.map { CarouselElement(drink: $0) }
+    }
     
     /// When you drink a Drink, add it to this list so you can see what you drank clicking on the liver.
     func addDrinkToDrank(drink: Drink) {
@@ -100,13 +105,13 @@ class DrinkViewModel : ObservableObject {
             drankArray.remove(at: index)
         }
     }
-        
+    
     
     // MARK: API Request
-
+    
     /// Retrieve the drinks from the API
     func getDrink() async  {
-
+        
         let url = URL(string: "http://127.0.0.1:8080/drinksJson")!
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else {
@@ -127,7 +132,7 @@ class DrinkViewModel : ObservableObject {
                 } catch {
                     print("Failed to write JSON data to file with error: \(error)")
                 }
-
+                
             } catch {
                 // handle error
                 print(error.localizedDescription)
@@ -176,7 +181,7 @@ class DrinkViewModel : ObservableObject {
         return true
     }
     
-
+    
 }
 
 // MARK: Drink CRUD Operation
@@ -187,7 +192,7 @@ extension DrinkViewModel {
         let fileManager = FileManager.default
         let documentDirectory = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         let jsonFileURL = documentDirectory.appendingPathComponent("drinks.json")
-
+        
         // Try to read existing JSON data from the file
         guard let jsonData = try? Data(contentsOf: jsonFileURL) else {
             // If the file doesn't exist or there's an error reading it, create a new JSON array with the new drink
@@ -197,19 +202,19 @@ extension DrinkViewModel {
             try! newJSONData.write(to: jsonFileURL)
             return
         }
-
+        
         // If the file does exist and we were able to read the JSON data, try to decode it as an array of drinks
         let jsonDecoder = JSONDecoder()
         let existingDrinks = try! jsonDecoder.decode([Drink].self, from: jsonData)
-
+        
         // Append the new drink to the existing array
         var updatedDrinks = existingDrinks
         updatedDrinks.append(drink)
-
+        
         // Encode the updated array as JSON data
         let jsonEncoder = JSONEncoder()
         let updatedJSONData = try! jsonEncoder.encode(updatedDrinks)
-
+        
         // Write the updated JSON data to the file
         try! updatedJSONData.write(to: jsonFileURL)
     }
@@ -225,6 +230,29 @@ extension DrinkViewModel {
             return []
         }
         return try! jsonDecoder.decode([Drink].self, from: jsonData)
+    }
+    
+    ///Check if six hours have passed
+    func timeUpdate() {
+        
+        let actualDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        let latestDateTime = formatter.date(from: lastDrinkDate)!
+        let delta = latestDateTime.timeIntervalSince(actualDate)
+        if  delta <= 6 * 3600 {
+            print("Raffaele Cagacazzo")
+        } else{
+            resetCountAfterSixHours()
+        }
+        
+    }
+    
+    ///Reset the drinks count
+    func resetCountAfterSixHours() {
+        drankArray = []
+        bacValue = "0.000"
+        haveEat = false
     }
     
     /// Update a Drink.
