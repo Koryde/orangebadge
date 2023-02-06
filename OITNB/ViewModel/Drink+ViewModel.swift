@@ -222,37 +222,6 @@ extension DrinkViewModel {
         appendDrinkToJSON(drink: drink)
     }
     
-    /// Retrieve a list with al Drinks.
-    func readDrinks() -> [Drink] {
-        guard let jsonData = try? Data(contentsOf: jsonFileURL) else {
-            return []
-        }
-        return try! jsonDecoder.decode([Drink].self, from: jsonData)
-    }
-    
-    ///Check if six hours have passed
-    func timeUpdate() {
-        
-        let actualDate = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy HH:mm"
-        let latestDateTime = formatter.date(from: lastDrinkDate)!
-        let delta = latestDateTime.timeIntervalSince(actualDate)
-        if  delta <= 6 * 3600 {
-            print("Raffaele Cagacazzo")
-        } else{
-            resetCount()
-        }
-        
-    }
-    
-    ///Reset the drinks count
-    func resetCount() {
-        drankArray = []
-        bacValue = "0.000"
-        haveEat = false
-    }
-    
     /// Update a Drink.
     func updateDrink(drink: Drink) {
         var drinks = readDrinks()
@@ -261,6 +230,14 @@ extension DrinkViewModel {
         }
         let jsonData = try! jsonEncoder.encode(drinks)
         try! jsonData.write(to: jsonFileURL)
+    }
+    
+    /// Retrieve a list with al Drinks.
+    func readDrinks() -> [Drink] {
+        guard let jsonData = try? Data(contentsOf: jsonFileURL) else {
+            return []
+        }
+        return try! jsonDecoder.decode([Drink].self, from: jsonData)
     }
     
     /// Remove a Drink from the JSON file.
@@ -283,5 +260,31 @@ extension DrinkViewModel {
         try! jsonData.write(to: jsonFileURL)
         self.updateCarouselElements()
         allDrinks = readDrinks()
+    }
+}
+
+// MARK: Check Time Interval to reset BAC Value
+extension DrinkViewModel {
+    
+    /// Check if six hours have passed from the last drink.
+    func timeUpdate() {
+        
+        let actualDate = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        let latestDateTime = formatter.date(from: lastDrinkDate)!
+        let delta = latestDateTime.timeIntervalSince(actualDate)
+        if  delta <= 6 * 3600 {
+            print("It's only \(delta/3600) Hours")
+        } else {
+            resetCount()
+        }
+        
+    }
+    ///Reset the BAC value.
+    func resetCount() {
+        drankArray = []
+        bacValue = "0.000"
+        haveEat = false
     }
 }

@@ -27,6 +27,7 @@ struct OITNBApp: App {
                 ContentView().environmentObject(drinkViewModel)
                     .onAppear {
                         drinkViewModel.allDrinks = drinkViewModel.readDrinks()
+                        drinkViewModel.timeUpdate()
                         print(drinkViewModel.lastDrinkDate)
                     }
                     .task {
