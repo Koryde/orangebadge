@@ -10,6 +10,9 @@ import SwiftUI
 
 class DrinkViewModel : ObservableObject {
     
+    @Published var haveEatToggle : Bool = false
+    @Published var canCalculateBac : Bool = false
+    
     // MARK: AppStorage Variable
     @AppStorage("myGender") var myGender : String = ""
     @AppStorage("myWeight") var myWeight : Double = 0.0

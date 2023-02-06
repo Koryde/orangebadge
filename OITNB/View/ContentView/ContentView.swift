@@ -37,6 +37,22 @@ struct ContentView: View {
                         Carousel(pageWidth: geo.size.width/2)
                     }
                 }
+                .alert("Have you eaten in the last two hours?", isPresented: $drinkViewModel.haveEatToggle) {
+                    Button {
+                        drinkViewModel.haveEat = true
+                        drinkViewModel.canCalculateBac = true
+                        drinkViewModel.haveEatToggle.toggle()
+                    } label: {
+                        Text("Yes")
+                    }
+                    Button {
+                        drinkViewModel.haveEat = false
+                        drinkViewModel.canCalculateBac = true
+                        drinkViewModel.haveEatToggle.toggle()
+                    } label: {
+                        Text("No")
+                    }
+                        }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing, content: {
                         NavigationLink(destination: {

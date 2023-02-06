@@ -65,8 +65,21 @@ struct CarouselElement: View {
     
     var body: some View {
         Button(action: {
-            drinkViewModel.bacValue = String(String(drinkViewModel.calculateBac(drink: drink, myWeight: drinkViewModel.myWeight, myGender: drinkViewModel.myGender, haveEat: drinkViewModel.haveEat, bacValue: drinkViewModel.bacValue, drankListOpen: false)).prefix(5))
-            drinkViewModel.addDrinkToDrank(drink: drink)
+            if drinkViewModel.bacValue == "0.000" {
+                drinkViewModel.haveEatToggle.toggle()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                    if drinkViewModel.canCalculateBac {
+                        drinkViewModel.bacValue = String(String(drinkViewModel.calculateBac(drink: drink, myWeight: drinkViewModel.myWeight, myGender: drinkViewModel.myGender, haveEat: drinkViewModel.haveEat, bacValue: drinkViewModel.bacValue, drankListOpen: false)).prefix(5))
+                        drinkViewModel.addDrinkToDrank(drink: drink)
+                    }
+                }
+            }
+            
+                if drinkViewModel.canCalculateBac {
+                    drinkViewModel.bacValue = String(String(drinkViewModel.calculateBac(drink: drink, myWeight: drinkViewModel.myWeight, myGender: drinkViewModel.myGender, haveEat: drinkViewModel.haveEat, bacValue: drinkViewModel.bacValue, drankListOpen: false)).prefix(5))
+                    drinkViewModel.addDrinkToDrank(drink: drink)
+                }
+            
         }, label: {
             ZStack {
                 Circle()
