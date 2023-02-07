@@ -10,6 +10,7 @@ import SwiftUI
 
 struct DrankListView: View {
     @EnvironmentObject var drinkViewModel: DrinkViewModel
+    @State private var showingAlert : Bool = false
 
     var body: some View {
         
@@ -20,10 +21,20 @@ struct DrankListView: View {
                 Text("Remove all the drinks")
                     .fontWeight(.bold)
                 Button {
-                    drinkViewModel.resetCount()
+                    showingAlert = true
                 } label: {
                     Image(systemName: "trash")
             }.tint(.red)
+             .alert("Are you sure you want to remove all the drinks?", isPresented: $showingAlert) {
+                            Button ("Cancel", role: .destructive){ }
+                     .foregroundColor(.red)
+                 
+                            Button("OK", role: .cancel) {
+                                drinkViewModel.resetCount()
+                            }
+        
+                 
+                        }
             }
             
             List {
