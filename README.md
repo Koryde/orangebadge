@@ -1,6 +1,6 @@
 # Boozemeter
 
-![Swift](https://img.shields.io/badge/iOS%20-15-green)
+![Swift](https://img.shields.io/badge/iOS%20-16-green)
 ![Swift](https://img.shields.io/badge/swift-F54A2A?style=for-the-badge&logo=swift&logoColor=white)
 
 ## _Calculate Your Blood Alcohol Content_
