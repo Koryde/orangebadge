@@ -13,7 +13,7 @@ Not only does our app calculate your BAC, but it also gives you personalized war
 
 With a user-friendly interface and easy-to-use design, our BAC calculator app makes it simple to keep track of your alcohol consumption and avoid dangerous situations. Whether you're a seasoned drinker or just starting out, this app is the perfect companion for a fun and safe night. So why wait? Download the app now and enjoy a night out, stress-free!
 
-[![Tutorial1.png](https://i.postimg.cc/wj6F5RSp/Tutorial1.png)](https://postimg.cc/BXVx4bSY)
+[![Tutorial1.png](https://i.postimg.cc/JnDW12qP/Tutorial1.png)](https://postimg.cc/njJW2TND)
 
 With our app, you can easily save your drinks with the Swift FileManager and access them anytime you need. Plus, you can add or remove your favorite drinks to make tracking even easier. Simply input your weight, gender, and whether or not you have eaten, and our app will provide you with a personalized BAC reading in real-time.
 
