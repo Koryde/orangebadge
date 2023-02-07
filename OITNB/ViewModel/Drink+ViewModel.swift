@@ -266,6 +266,13 @@ extension DrinkViewModel {
 // MARK: Check Time Interval to reset BAC Value
 extension DrinkViewModel {
     
+    /// Save the Date of the last Drink in the app.
+    func saveLastDrinkDate() {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy HH:mm"
+        lastDrinkDate = formatter.string(from: Date())
+    }
+    
     /// Check if six hours have passed from the last drink.
     func timeUpdate() {
         
