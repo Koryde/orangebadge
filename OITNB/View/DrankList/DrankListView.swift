@@ -15,28 +15,6 @@ struct DrankListView: View {
     var body: some View {
         
         NavigationStack {
-            
-            HStack {
-                Spacer()
-                Text("Remove all the drinks")
-                    .fontWeight(.bold)
-                Button {
-                    showingAlert = true
-                } label: {
-                    Image(systemName: "trash")
-            }.tint(.red)
-             .alert("Are you sure you want to remove all the drinks?", isPresented: $showingAlert) {
-                            Button ("Cancel", role: .destructive){ }
-                     .foregroundColor(.red)
-                 
-                            Button("OK", role: .cancel) {
-                                drinkViewModel.resetCount()
-                            }
-        
-                 
-                        }
-            }
-            
             List {
                 ForEach(drinkViewModel.drankArray){
                     drink in
@@ -58,7 +36,30 @@ struct DrankListView: View {
                 }
             }
             Spacer()
-            .navigationTitle("Drinks you had")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading, content: {
+                    Text("Drinks you had")
+                        .font(.largeTitle)
+                        .padding(.top)
+                })
+                ToolbarItem(placement: .navigationBarTrailing, content: {
+                        Button {
+                            showingAlert = true
+                        } label: {
+                            Image(systemName: "trash")
+                                .tint(.red)
+                     .alert("Are you sure you want to remove all the drinks?", isPresented: $showingAlert) {
+                                    Button ("Cancel", role: .destructive){ }
+                             .foregroundColor(.red)
+                         
+                                    Button("OK", role: .cancel) {
+                                        drinkViewModel.resetCount()
+                                    }
+                                }
+                    }
+                        .padding(.top)
+                })
+            }
         }
     }
 }
