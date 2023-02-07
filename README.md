@@ -18,3 +18,5 @@ With a user-friendly interface and easy-to-use design, our BAC calculator app ma
 With our app, you can easily save your drinks with the Swift FileManager and access them anytime you need. Plus, you can add or remove your favorite drinks to make tracking even easier. Simply input your weight, gender, and whether or not you have eaten, and our app will provide you with a personalized BAC reading in real-time.
 
 But that's not all! Our app also includes a unique feature that allows you to save your favorite drinks, making it quick and easy to track your BAC throughout the night. Whether you're a beer lover, wine aficionado, or cocktail connoisseur, you can keep track of all your favorite drinks in one convenient place.
+
+[![Tutorial2.png](https://i.postimg.cc/qM7xzHnJ/Tutorial2.png)](https://postimg.cc/QVRTyP0w)
