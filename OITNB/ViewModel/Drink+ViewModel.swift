@@ -17,7 +17,7 @@ class DrinkViewModel : ObservableObject {
     @AppStorage("myWeight") var myWeight : Double = 0.0
     @AppStorage("bacValue") var bacValue : String = "0.000"
     @AppStorage("haveEat") var haveEat : Bool = false
-    @AppStorage("lastDrinkDate") var lastDrinkDate : String = ""
+    @AppStorage("lastDrinkDate") var lastDrinkDate : String = "13/12/1928 14:00"
     
     
     // MARK: Constant/Var for Encode/Decode the JSON
