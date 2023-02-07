@@ -20,6 +20,11 @@ struct OITNBApp: App {
             let drinkViewModel = DrinkViewModel()
             if needsAppOnBoarding{
                 OnBoardingView().environmentObject(drinkViewModel)
+                    .task {
+                        if !drinkViewModel.checkJSONFile() {
+                            drinkViewModel.decodeLocalJSON()
+                        }
+                    }
                     .onAppear {
                         drinkViewModel.allDrinks = drinkViewModel.readDrinks()
                     }
@@ -30,11 +35,7 @@ struct OITNBApp: App {
                         drinkViewModel.timeUpdate()
                         print(drinkViewModel.lastDrinkDate)
                     }
-                    .task {
-                        if !drinkViewModel.checkJSONFile() {
-                            drinkViewModel.decodeLocalJSON()
-                        }
-                    }
+                   
             }
         }
     }
