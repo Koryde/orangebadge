@@ -56,11 +56,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC1B496A29924C3F00BFDC0F /* DrinkList */ = {
+			isa = PBXGroup;
+			children = (
+				4317ABC52987CD2A008F8A10 /* AddNewDrinkView.swift */,
+				43BDD874297548730084FC41 /* DrinksListView.swift */,
+			);
+			path = DrinkList;
+			sourceTree = "<group>";
+		};
+		AC1B496B29924C4D00BFDC0F /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				EFB0F62D29799905002F6774 /* AccountView.swift */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		AC1B496C29924C8E00BFDC0F /* DrankList */ = {
+			isa = PBXGroup;
+			children = (
+				AC30CC172982733C00C01F1C /* DrankListView.swift */,
+			);
+			path = DrankList;
+			sourceTree = "<group>";
+		};
 		AC29A2F52970570F00486EF0 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				ACD1AE9F2975411B00B49BFF /* OnBoarding */,
 				ACD1AEA02975413200B49BFF /* ContentView */,
+				AC1B496C29924C8E00BFDC0F /* DrankList */,
+				AC1B496B29924C4D00BFDC0F /* Account */,
+				AC1B496A29924C3F00BFDC0F /* DrinkList */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,15 +121,11 @@
 			isa = PBXGroup;
 			children = (
 				697894AE296ECA6E00EA2455 /* ContentView.swift */,
-				43BDD874297548730084FC41 /* DrinksListView.swift */,
-				4317ABC52987CD2A008F8A10 /* AddNewDrinkView.swift */,
 				43E32C3C29700DA400F1A653 /* BACView.swift */,
 				43E32C3A296ED9E800F1A653 /* Carousel.swift */,
 				697894B0296ED31D00EA2455 /* BasicDrinksView.swift */,
 				ACB0CF142970266400D43940 /* LiverLiquidView.swift */,
-				EFB0F62D29799905002F6774 /* AccountView.swift */,
 				AC2E13B2297FEC8C0056F0A4 /* startingDrinks.json */,
-				AC30CC172982733C00C01F1C /* DrankListView.swift */,
 			);
 			path = ContentView;
 			sourceTree = "<group>";

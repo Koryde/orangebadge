@@ -24,7 +24,7 @@ struct BACView: View {
                     DrankListView()
                 })
                 .frame(width: 100, height: 100)
-            Text("BAC: ") + Text(String(format: "%.3f", actualBacLevel)) + Text(" g/ml")
+            Text("BAC: ") + Text(String(format: "%.3f", actualBacLevel)) + Text(" g/l")
         }
         .onChange(of: drinkViewModel.bacValue) { bac in
             actualBacLevel = Float(drinkViewModel.bacValue)!
